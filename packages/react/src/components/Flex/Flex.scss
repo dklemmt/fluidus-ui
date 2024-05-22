@@ -1,0 +1,73 @@
+$align-keys: (
+  "start",
+  "end",
+  "flex-start",
+  "flex-end",
+  "center",
+  "space-between",
+  "space-around",
+  "space-evenly",
+  "stretch"
+);
+$gap-keys: (
+  "xxxlarge",
+  "xxlarge",
+  "xlarge",
+  "large",
+  "medium",
+  "small",
+  "xsmall",
+  "xxsmall",
+  "xxxsmall"
+);
+$justify-keys: (
+  "space-around",
+  "space-between",
+  "space-evenly",
+  "stretch",
+  "center",
+  "end",
+  "flex-end",
+  "flex-start",
+  "start",
+  "left",
+  "right"
+);
+$wrap-keys: ("wrap", "wrap-reverse");
+
+.fluidus-flex {
+  display: flex;
+
+  // align-content
+  @each $align in $align-keys {
+    &-align-#{$align} {
+      align-content: #{$align};
+    }
+  }
+
+  // flex-direction
+  &-direction-vertical {
+    flex-direction: column;
+  }
+
+  // flex-wrap
+  @each $wrap in $wrap-keys {
+    &-wrap-#{$wrap} {
+      flex-wrap: #{$wrap};
+    }
+  }
+
+  // gap
+  @each $gap in $gap-keys {
+    &-gap-#{$gap} {
+      gap: var(--fluidus-size-space-#{$gap});
+    }
+  }
+
+  // justify-content
+  @each $justify in $justify-keys {
+    &-justify-#{$justify} {
+      justify-content: #{$justify};
+    }
+  }
+}

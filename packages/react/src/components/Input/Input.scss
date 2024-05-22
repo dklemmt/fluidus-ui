@@ -1,0 +1,98 @@
+// @use "@fluidus-ui/tokens/dist/fluidus/css/components/spinner.css";
+
+.fluidus-input-container {
+  --text-offset-left: calc(
+    var(--fluidus-size-space-xxsmall) + 1px
+  ); // 1px due to border
+
+  .fluidus-input {
+    width: min(100%, 40ch);
+    padding: calc(var(--fluidus-size-space-medium) - 4px)
+      var(--fluidus-size-space-xxsmall) var(--fluidus-size-space-xxsmall);
+    border: 1px solid var(--fluidus-color-orange-400);
+    border-radius: var(--fluidus-size-radius-small);
+    font-size: var(--fluidus-size-font-body-small-font-size);
+
+    &--disabled {
+      border-color: var(--fluidus-color-grey-100);
+      cursor: not-allowed;
+    }
+
+    &--error {
+      border-color: var(--fluidus-color-red-500);
+    }
+
+    // hide placeholder
+    &::placeholder {
+      color: rgb(0 0 0 / 0%);
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--fluidus-color-orange-500);
+    }
+  }
+
+  .fluidus-input-label {
+    display: block;
+    position: relative;
+    max-height: 0;
+
+    // initial state
+    &::before {
+      content: attr(data-content);
+      display: inline-block;
+      position: relative;
+
+      // backface-visibility: hidden;
+      // color: red;
+      // filter: blur(0);
+      bottom: calc(
+        (
+          (
+              var(--fluidus-size-space-medium) +
+                var(--fluidus-size-space-xxxsmall) +
+                var(--fluidus-size-font-body-small-font-size) + 6px
+            ) / 2
+        )
+      );
+      left: var(--text-offset-left);
+      transform-origin: left top;
+      transition: transform 0.2s ease;
+      color: var(--fluidus-color-grey-900);
+    }
+  }
+
+  // initial position of label
+  .fluidus-input:placeholder-shown + .fluidus-input-label::before {
+    transform: translateY(-50%);
+  }
+
+  .fluidus-input-label::before,
+  .fluidus-input:focus + .fluidus-input-label::before {
+    transform: translateY(-100%) scale(0.75);
+
+    // color: var(--fluidus-color-grey-700);
+  }
+
+  // label styles if focused
+  // .fluidus-input:focus + .fluidus-input-label::before {
+  //  color: blue;
+  // }
+
+  .fluidus-input-label--disabled {
+    &::before {
+      color: var(--fluidus-color-grey-400);
+    }
+  }
+
+  .fluidus-input-assistive-text,
+  .fluidus-input-error-text {
+    padding-top: var(--fluidus-size-space-xxxsmall);
+    padding-left: var(--text-offset-left);
+    font-size: var(--fluidus-size-font-body-xsmall-font-size);
+  }
+
+  .fluidus-input-error-text {
+    color: var(--fluidus-color-red-500);
+  }
+}

@@ -1,0 +1,136 @@
+.fluidus-content-layout {
+  --fluidus-content-layout-content-max-width: 77.5rem; // max width of "content" area (1240px)
+  --fluidus-content-layout-wide-max-width: 60rem; // max width of "wide" area (x px)
+  --fluidus-content-layout-narrow-max-width: 45rem; // max width of "narrow" area (x px)
+  --fluidus-content-layout-padding: var(
+    --fluidus-size-space-small-large
+  ); // padding left and right of the content area to screen border
+
+  --content-size: calc(
+    (
+        var(--fluidus-content-layout-content-max-width) - var(
+            --fluidus-content-layout-wide-max-width
+          )
+      ) / 2
+  );
+  --wide-size: calc(
+    (
+        var(--fluidus-content-layout-wide-max-width) - var(
+            --fluidus-content-layout-narrow-max-width
+          )
+      ) / 2
+  );
+  --fluidus-content-layout-spacing: var(
+    --fluidus-size-space-medium-large
+  ); // spacing between two following content containers
+
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--fluidus-content-layout-padding), 1fr)
+    [content-start] minmax(0, var(--content-size))
+    [wide-start] minmax(0, var(--wide-size))
+    [narrow-start]
+    min(
+      100% - (var(--fluidus-content-layout-padding) * 2),
+      var(--fluidus-content-layout-narrow-max-width)
+    )
+    [narrow-end]
+    minmax(0, var(--wide-size)) [wide-end]
+    minmax(0, var(--content-size)) [content-end]
+    minmax(var(--fluidus-content-layout-padding), 1fr) [full-end];
+  justify-content: center;
+  row-gap: var(--fluidus-content-container-spacing);
+
+  // if the children don't get a specific column position, they should be placed in the "content" column
+  &:not(&--narrow, &--narrow-padding, &--wide, &--wide-padding)
+    > :not(.fluidus-content-section--content, .fluidus-content-section--full),
+  .fluidus-content-section--full
+    > :not(.fluidus-content-section--content, .fluidus-content-section--full) {
+    grid-column: content;
+  }
+
+  &--wide {
+    & > :not(.fluidus-content--full),
+    .fluidus-content-section--full > :not(.fluidus-content-section--full) {
+      grid-column: wide;
+    }
+  }
+
+  &--narrow {
+    & > :not(.fluidus-content-section--full),
+    .fluidus-content-section--full > :not(.fluidus-content-section--full) {
+      grid-column: narrow;
+    }
+  }
+
+  &--wide-padding {
+    grid-template-columns:
+      minmax(var(--fluidus-content-layout-padding), 1fr)
+      [wide-padding-start] var(--fluidus-content-layout-padding)
+      [wide-start]
+      min(
+        100% - (var(--fluidus-content-layout-padding) * 4),
+        var(--fluidus-content-layout-wide-max-width)
+      )
+      [wide-end]
+      var(--fluidus-content-layout-padding) [wide-padding-end]
+      minmax(var(--fluidus-content-layout-padding), 1fr);
+
+    & > div {
+      display: grid;
+      grid-column: wide-padding;
+      grid-template-columns: subgrid;
+
+      & > :not(.fluidus-content-section--wide) {
+        grid-column: wide;
+      }
+    }
+  }
+
+  &--narrow-padding {
+    grid-template-columns:
+      minmax(var(--fluidus-content-layout-padding), 1fr)
+      [narrow-padding-start] var(--fluidus-content-layout-padding)
+      [narrow-start]
+      min(
+        100% - (var(--fluidus-content-layout-padding) * 4),
+        var(--fluidus-content-layout-narrow-max-width)
+      )
+      [narrow-end]
+      var(--fluidus-content-layout-padding) [narrow-padding-end]
+      minmax(var(--fluidus-content-layout-padding), 1fr);
+
+    & > div {
+      display: grid;
+      grid-column: narrow-padding;
+      grid-template-columns: subgrid;
+
+      & > :not(.fluidus-content-section--narrow) {
+        grid-column: narrow;
+      }
+    }
+  }
+
+  &:has(.fluidus-content-section--content) .fluidus-content-section--content {
+    grid-column: content;
+  }
+
+  &:has(.fluidus-content-section--wide) .fluidus-content-section--wide {
+    grid-column: wide;
+  }
+
+  &:has(.fluidus-content-section--narrow) .fluidus-content-section--narrow {
+    grid-column: narrow;
+  }
+
+  &:has(.fluidus-content-section--full) .fluidus-content-section--full {
+    display: grid;
+    grid-column: full;
+    grid-template-columns: inherit;
+  }
+
+  // Spacing between two ContentLayouts
+  & + * {
+    margin-top: var(--fluidus-content-layout-spacing);
+  }
+}

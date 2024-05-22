@@ -1,0 +1,46 @@
+$enable-hyphenation: true !default;
+
+@mixin typography-base {
+  :is(h1, h2, h3, h4, h5, h6, p) + * {
+    margin-top: 1.15em;
+  }
+
+  // Typography styles
+  body {
+    color: var(--fluidus-color-grey-900);
+    font-family: var(--fluidus-base-font-family-regular);
+    line-height: 1.5;
+  }
+
+  // Paragraphs
+  p {
+    font-size: inherit;
+  }
+
+  // Emphasized text
+  em,
+  i {
+    font-style: italic;
+    line-height: inherit;
+  }
+
+  // Strong/bold text
+  strong,
+  b {
+    font-weight: bold;
+    line-height: inherit;
+  }
+
+  // Small text
+  small {
+    //    font-size: $small-font-size;
+    line-height: inherit;
+  }
+
+  @if $enable-hyphenation == "true" {
+    body {
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+  }
+}

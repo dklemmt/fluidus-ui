@@ -1,0 +1,9 @@
+// unused
+{
+  "extends": ["../../tsconfig.json", "./tsconfig.json"],
+  "compilerOptions": {
+    "noEmit": true, // ensure that nobody can accidentally use this config for a build
+    "types": ["jest"]
+  },
+  "include": ["src/**/*"]
+}

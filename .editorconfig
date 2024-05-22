@@ -1,0 +1,21 @@
+# help developers to define and maintain consistent coding styles between editors and IDEs
+# if necessary, download plugin for your editor or IDE @ http://editorconfig.org
+root = true
+
+## settings for every file
+[*]
+charset = utf-8
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+## keep EOL to be LF for all of files, which will avoid CRLF to be pushed into git as the git hooks without any restrictions yet.
+end_of_line = lf
+
+## override settings matching given file extension pattern
+[*.html]
+insert_final_newline = false
+
+[*.md]
+trim_trailing_whitespace = false

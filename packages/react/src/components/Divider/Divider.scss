@@ -1,0 +1,40 @@
+@use "@fluidus-ui/tokens/dist/fluidus/css/components/divider.css";
+
+.fluidus-divider {
+  display: flex;
+  justify-content: center;
+  color: var(--fluidus-color-divider-text-color);
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--fluidus-size-divider-gap);
+    width: var(--fluidus-size-divider-max-width);
+  }
+
+  &--line,
+  &--line-left,
+  &--line-right {
+    width: 100%;
+    height: var(--fluidus-size-divider-line-width);
+    border-radius: var(--fluidus-size-divider-line-radius);
+  }
+
+  &--line {
+    background: var(--fluidus-color-divider-line);
+  }
+
+  &--line-left {
+    background: var(--fluidus-color-divider-line-left);
+  }
+
+  &--line-right {
+    background: var(--fluidus-color-divider-line-right);
+  }
+
+  &--content {
+    display: flex;
+    min-width: fit-content;
+  }
+}

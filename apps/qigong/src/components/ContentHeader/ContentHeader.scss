@@ -1,0 +1,9 @@
+.content-header {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.content-header + * {
+  //margin-top: $spacing-10;
+}

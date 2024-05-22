@@ -1,0 +1,6 @@
+@charset "UTF-8";
+@use "@fluidus-ui/core/src/scss" as fluidus;
+@use "scss/app";
+@use "scss/link";
+
+@include fluidus.sticky-footer;

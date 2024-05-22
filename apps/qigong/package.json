@@ -1,0 +1,50 @@
+{
+  "name": "qigong",
+  "version": "0.0.1",
+  "description": "",
+  "author": {
+    "name": "Dirk Klemmt"
+  },
+  "license": "ISC",
+  "repository": "",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack serve --config ./config/webpack/webpack.dev.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack/webpack.prod.config.js",
+    "build:analyzer": "cross-env NODE_ENV=production webpack --env analyzer=true --config ./config/webpack/webpack.prod.config.js"
+  },
+  "dependencies": {
+    "@fluidus-ui/core": "^0.0.1",
+    "@fluidus-ui/react": "^0.0.1",
+    "antd": "^5.17.0",
+    "classnames": "^2.5.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.51.4",
+    "react-router-dom": "^6.23.0",
+    "react-use": "^17.5.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "@types/webpack-bundle-analyzer": "^4.7.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^7.1.1",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "sass": "^1.77.2",
+    "sass-loader": "^14.2.0",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "5.4.5",
+    "webpack": "^5.90.0",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-merge": "^5.10.0",
+    "webpackbar": "^6.0.1"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

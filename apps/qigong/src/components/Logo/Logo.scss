@@ -1,0 +1,24 @@
+.logo-sun {
+  position: absolute;
+  //display: flow-root;
+  //float: right;
+  top: 5px;
+  right: 4.5px;
+  width: 50px;
+  height: 50px;
+  background: url("/assets/images/sun-fun-neu.svg") no-repeat;
+
+  //@media print, screen and (width >= 40em) and (width <= 63.9988em) {
+  //  top: 10px;
+  //  right: 9px;
+  //  width: 100px;
+  //  height: 100px;
+  //}
+
+  //@media print, screen and (width >= 64em) {
+  //  top: 16px;
+  //  right: 13.5px;
+  //  width: 150px;
+  //  height: 150px;
+  //}
+}

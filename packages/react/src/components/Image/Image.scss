@@ -1,0 +1,45 @@
+// .fluidus-image-container {
+//  position: relative;
+//  //overflow: hidden;
+//  animation: loading 4s linear infinite;
+//  outline: none;
+// }
+
+.fluidus-image {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+
+  &-broken {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0 0 0 / 8%);
+    color: var(--fluidus-color-grey-500);
+  }
+
+  // &-placeholder {
+  //  background-color: rgb(255 0 0 / 50%);
+  // }
+
+  // &--is-loading-placeholder {
+  //  animation: loading 4s linear infinite;
+  //  pointer-events: none;
+  // }
+
+  &--fade-in {
+    transition: opacity 400ms;
+    opacity: 1;
+  }
+
+  // @keyframes loading {
+  //  0%,
+  //  100% {
+  //    background-color: rgb(0 0 0 / 8%);
+  //  }
+
+  //  50% {
+  //    background-color: rgb(0 0 0 / 18%);
+  //  }
+  // }
+}

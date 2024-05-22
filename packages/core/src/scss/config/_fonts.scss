@@ -1,0 +1,101 @@
+/*
+ * Font face definitions
+ *
+ * woff2 format is fine to be used only (https://caniuse.com/mdn-css_at-rules_font-face_woff_2)
+ *
+ * Tips & tricks:
+ * https://www.456bereastreet.com/archive/201012/font-face_tip_define_font-weight_and_font-style_to_keep_your_css_simple/
+ * https://developers.google.com/web/updates/2016/02/font-display
+ *
+ * @import url("https://fonts.googleapis.com/css2?family=Quicksand&family=Tenor+Sans&display=swap");
+ * but be warned about Google tracking
+ */
+
+/*
+ * Lato (https://fonts.google.com/specimen/Lato?preview.text_type=custom)
+ *
+ * Download as webfont: https://gwfh.mranftl.com/fonts/lato?subsets=latin
+ */
+
+// Light (font weight 300)
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 300;
+  src: url("@fluidus-ui/core/assets/fonts/lato-v24-latin-300.woff2")
+    format("woff2");
+}
+
+// Light italic (font weight 300)
+@font-face {
+  font-family: Lato;
+  font-style: italic;
+  font-weight: 300;
+  src: url("@fluidus-ui/core/assets/fonts/lato-v24-latin-300italic.woff2")
+    format("woff2");
+}
+
+// Regular (font weight 400 | normal)
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  src: url("@fluidus-ui/core/assets/fonts/lato-v24-latin-regular.woff2")
+    format("woff2");
+}
+
+// Regular italic (font weight 400 | normal)
+@font-face {
+  font-family: Lato;
+  font-style: italic;
+  font-weight: 400;
+  src: url("@fluidus-ui/core/assets/fonts/lato-v24-latin-italic.woff2")
+    format("woff2");
+}
+
+// Bold (font weight 700 | bold)
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  src: url("@fluidus-ui/core/assets/fonts/lato-v24-latin-700.woff2")
+    format("woff2");
+}
+
+// Bold italic (font weight 700 | bold)
+@font-face {
+  font-family: Lato;
+  font-style: italic;
+  font-weight: 700;
+  src: url("@fluidus-ui/core/assets/fonts/lato-v24-latin-700italic.woff2")
+    format("woff2");
+}
+
+/*
+ * Quicksand (https://fonts.google.com/specimen/Quicksand?preview.text_type=custom) used mainly for body text
+ *
+ * Download as webfont: https://gwfh.mranftl.com/fonts/quicksand?subsets=latin
+ */
+@font-face {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 300;
+  src: url("@fluidus-ui/core/assets/fonts/quicksand-v31-latin-300.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 400;
+  src: url("@fluidus-ui/core/assets/fonts/quicksand-v31-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 700;
+  src: url("@fluidus-ui/core/assets/fonts/quicksand-v31-latin-700.woff2")
+    format("woff2");
+}

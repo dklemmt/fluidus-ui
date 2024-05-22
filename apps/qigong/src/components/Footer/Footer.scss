@@ -1,0 +1,16 @@
+.footer {
+  min-height: 60px;
+
+  &-container {
+    display: grid;
+    grid-column: narrow-padding;
+    grid-template-columns: inherit;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: hsl(0deg 0% 100% / 70%);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}

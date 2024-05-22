@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    //    "checkJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    // Bundler mode
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+
+    // Linting
+    "noImplicitAny": true,
+    "strict": true
+
+    // todo: this has been placed here only to give peace to Webstorm's Eslint check.
+    //    "paths": {
+    //      "@components/*": ["packages/react/src/components/*"],
+    //      "@types/*": ["packages/react/src/types/*"],
+    //      "@utils/*": ["packages/react/src/utils/*"]
+    //    }
+  },
+  "references": [
+    {
+      "path": "packages/react"
+    }
+  ]
+}

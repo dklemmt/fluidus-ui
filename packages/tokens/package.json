@@ -1,0 +1,28 @@
+{
+  "name": "@fluidus-ui/tokens",
+  "version": "0.0.1",
+  "description": "Fluidus UI Design Tokens",
+  "author": "Dirk Klemmt",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run clean && npm run build:tokens",
+    "build:tokens": "node ./scripts/build-tokens.js",
+    "clean": "rimraf dist",
+    "watch": "npm run build && chokidar \"scripts/**/*.js\" \"src/**/*.js\" -c 'npm run build'"
+  },
+  "publishConfig": {
+    "registry": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "chokidar": "^3.6.0",
+    "rimraf": "^5.0.7",
+    "style-dictionary": "^3.9.2"
+  },
+  "dependencies": {
+    "@evilmartians/harmony": "^1.2.0"
+  }
+}

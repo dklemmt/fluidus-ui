@@ -1,0 +1,65 @@
+.fluidus-checkbox,
+.fluidus-checkbox-label {
+  --checkbox-color-tick: var(--fluidus-color-orange-700);
+  --checkbox-color-disabled: var(--fluidus-color-grey-400);
+}
+
+.fluidus-checkbox-label {
+  display: grid;
+  grid-template-columns: 1em auto;
+  align-items: baseline;
+  gap: var(--fluidus-size-space-xsmall);
+  font-size: var(--fluidus-size-font-body-medium-font-size);
+
+  &:has(.fluidus-checkbox:disabled) {
+    color: var(--checkbox-color-disabled);
+    cursor: not-allowed;
+  }
+}
+
+.fluidus-checkbox {
+  display: grid;
+  width: 1.15em;
+  height: 1.15em;
+  margin: 0;
+  transform: translateY(-0.075em);
+  border: 0.125em solid currentcolor;
+  border-radius: 0.15em;
+  color: currentcolor;
+  font: inherit;
+  place-content: center;
+  appearance: none;
+
+  &::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+
+    // background-color: CanvasText;
+    box-shadow: inset 1em 1em var(--checkbox-color-tick);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+
+  &:focus {
+    outline: max(2px, 0.15em) dashed var(--fluidus-color-orange-500);
+    outline-offset: max(2px, 0.15em);
+  }
+
+  &:disabled {
+    --checkbox-color-tick: var(--checkbox-color-disabled);
+
+    color: var(--checkbox-color-tick);
+    cursor: not-allowed;
+  }
+}
+
+.fluidus-checkbox-error-text {
+  color: var(--fluidus-color-red-500);
+  font-size: var(--fluidus-size-font-body-xsmall-font-size);
+}

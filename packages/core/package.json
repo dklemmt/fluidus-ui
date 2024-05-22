@@ -1,0 +1,31 @@
+{
+  "name": "@fluidus-ui/core",
+  "version": "0.0.1",
+  "description": "Fluidus UI core styles, typography and colours.",
+  "scripts": {
+    "build": "rimraf dist && node scripts/build-css.js"
+  },
+  "author": "Dirk Klemmt",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "",
+    "directory": "packages/core"
+  },
+  "dependencies": {
+    "@fluidus-ui/tokens": "0.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.1",
+    "fs-extra": "11.2.0",
+    "postcss": "^8.4.35",
+    "sass": "^1.77.2"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

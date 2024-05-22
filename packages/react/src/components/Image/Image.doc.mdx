@@ -1,0 +1,15 @@
+import { Canvas, Controls, Meta, Source, Stories } from '@storybook/blocks';
+import * as ComponentStories from './Image.stories';
+
+<Meta of={ComponentStories} />
+
+# Image
+
+<Canvas of={ComponentStories.Default} />
+<Controls />
+
+### Usage
+
+<Source code={`import { Image } from '@fluidus-ui/react';`} dark />
+
+<Stories />

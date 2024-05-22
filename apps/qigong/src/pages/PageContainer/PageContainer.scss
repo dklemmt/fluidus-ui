@@ -1,0 +1,23 @@
+.fluidus-content-layout--narrow-padding {
+  container-name: page-container;
+  container-type: inline-size;
+}
+
+.page-container {
+  margin-top: calc(
+    var(--fluidus-size-space-medium-large) + var(--header-height)
+  );
+  margin-bottom: var(--fluidus-size-space-medium-large);
+  padding-top: var(--fluidus-size-space-small-large);
+  padding-bottom: var(--fluidus-size-space-small-large);
+  border-radius: 10px;
+  background-color: hsl(0deg 0% 100% / 70%);
+  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+//@container page-container (min-width: 600px) {
+//  .page-container {
+//    background-color: red;
+//  }
+//}
