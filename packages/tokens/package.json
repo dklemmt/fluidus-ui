@@ -18,11 +18,9 @@
     "url": ""
   },
   "devDependencies": {
+    "@evilmartians/harmony": "^1.2.0",
     "chokidar": "^3.6.0",
     "rimraf": "^5.0.7",
     "style-dictionary": "^3.9.2"
-  },
-  "dependencies": {
-    "@evilmartians/harmony": "^1.2.0"
   }
 }
