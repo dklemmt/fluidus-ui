@@ -1,0 +1,8 @@
+:root {
+  --fluidus-focus-outline: max(2px, 0.15em) dashed;
+  --fluidus-focus-outline-color: var(--fluidus-color-orange-500);
+  --fluidus-focus-outline-offset: max(2px, 0.15em);
+  --fluidus-focus-outline: max(4px, 0.25em) solid;
+  --fluidus-focus-outline-color: var(--fluidus-color-orange-100);
+  --fluidus-focus-outline-offset: 0;
+}
