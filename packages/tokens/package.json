@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "npm run clean && npm run build:tokens",
+    "build:harmony": "node ./scripts/build-harmony-palette.js",
     "build:tokens": "node ./scripts/build-tokens.js",
     "clean": "rimraf dist",
     "watch": "npm run build && chokidar \"scripts/**/*.js\" \"src/**/*.js\" -c 'npm run build'"
