@@ -6,7 +6,7 @@ const meta = {
   component: Input,
   argTypes: {
     className: { control: false },
-    // type: { control: "select" },
+    type: { control: "select" },
   },
   args: {
     label: "Label",
@@ -17,13 +17,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const WithAssistiveText: Story = {
+export const AssistiveText: Story = {
   args: { assistiveText: "Assistive text" },
 };
+
 export const Disabled: Story = {
   args: { disabled: true },
 };
 
 export const Error: Story = {
   args: { error: true },
+};
+
+export const ErrorMessage: Story = {
+  args: {
+    error: true,
+    errorText: "You must fill in the field.",
+  },
 };

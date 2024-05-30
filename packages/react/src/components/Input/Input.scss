@@ -13,8 +13,13 @@
     border-radius: var(--fluidus-size-radius-small);
     font-size: var(--fluidus-size-font-body-small-font-size);
 
-    &--disabled {
-      border-color: var(--fluidus-color-grey-100);
+    &:focus {
+      outline: var(--fluidus-focus-outline) var(--fluidus-focus-outline-color);
+      outline-offset: var(--fluidus-focus-outline-offset);
+    }
+
+    &:disabled {
+      border-color: var(--fluidus-color-grey-300);
       cursor: not-allowed;
     }
 
@@ -25,10 +30,6 @@
     // hide placeholder
     &::placeholder {
       color: rgb(0 0 0 / 0%);
-    }
-
-    &:focus-visible {
-      outline: 1px solid var(--fluidus-color-orange-500);
     }
   }
 
@@ -42,10 +43,6 @@
       content: attr(data-content);
       display: inline-block;
       position: relative;
-
-      // backface-visibility: hidden;
-      // color: red;
-      // filter: blur(0);
       bottom: calc(
         (
           (
@@ -56,33 +53,27 @@
         )
       );
       left: var(--text-offset-left);
+      transform: translateY(-100%) scale(0.75);
       transform-origin: left top;
       transition: transform 0.2s ease;
       color: var(--fluidus-color-grey-900);
     }
   }
 
-  // initial position of label
-  .fluidus-input:placeholder-shown + .fluidus-input-label::before {
+  // (initial) position of the label that shows the placeholder text
+  &:has(.fluidus-input:placeholder-shown) .fluidus-input-label::before {
     transform: translateY(-50%);
   }
 
-  .fluidus-input-label::before,
-  .fluidus-input:focus + .fluidus-input-label::before {
+  // position of the label if focussed
+  &:has(.fluidus-input:focus) .fluidus-input-label::before {
     transform: translateY(-100%) scale(0.75);
-
-    // color: var(--fluidus-color-grey-700);
+    color: var(--fluidus-color-grey-700);
   }
 
-  // label styles if focused
-  // .fluidus-input:focus + .fluidus-input-label::before {
-  //  color: blue;
-  // }
-
-  .fluidus-input-label--disabled {
-    &::before {
-      color: var(--fluidus-color-grey-400);
-    }
+  // disabled
+  &:has(.fluidus-input:disabled) .fluidus-input-label::before {
+    color: var(--fluidus-color-grey-400);
   }
 
   .fluidus-input-assistive-text,

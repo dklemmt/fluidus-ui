@@ -3,10 +3,16 @@ import { ScrollToTop } from "./ScrollToTop";
 
 const meta = {
   component: ScrollToTop,
-  argTypes: {
-    className: { control: false },
-  },
+  argTypes: {},
   args: {},
+  decorators: [
+    (Story) => (
+      <div style={{ height: "300px" }}>
+        <p>Please scroll the page.</p>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof ScrollToTop>;
 export default meta;
 type Story = StoryObj<typeof meta>;

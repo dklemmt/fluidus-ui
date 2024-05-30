@@ -11,10 +11,16 @@
       var(--fluidus-size-space-xxsmall) var(--fluidus-size-space-xxsmall);
     border: 1px solid var(--fluidus-color-orange-400);
     border-radius: var(--fluidus-size-radius-small);
+    font-family: var(--fluidus-base-font-family-base);
     font-size: var(--fluidus-size-font-body-small-font-size);
 
-    &--disabled {
-      border-color: var(--fluidus-color-grey-100);
+    &:focus {
+      outline: var(--fluidus-focus-outline) var(--fluidus-focus-outline-color);
+      outline-offset: var(--fluidus-focus-outline-offset);
+    }
+
+    &:disabled {
+      border-color: var(--fluidus-color-grey-300);
       cursor: not-allowed;
     }
 
@@ -25,10 +31,6 @@
     // hide placeholder
     &::placeholder {
       color: rgb(0 0 0 / 0%);
-    }
-
-    &:focus-visible {
-      outline: 1px solid var(--fluidus-color-orange-500);
     }
   }
 
@@ -42,11 +44,7 @@
       content: attr(data-content);
       display: inline-block;
       position: relative;
-
-      // backface-visibility: hidden;
-      // color: red;
-      // filter: blur(0);
-      bottom: calc(
+      top: calc(
         (
           (
               var(--fluidus-size-space-medium) +
@@ -56,33 +54,29 @@
         )
       );
       left: var(--text-offset-left);
+      transform: translateY(-100%) scale(0.75);
       transform-origin: left top;
       transition: transform 0.2s ease;
+      background-color: hsl(0deg 0% 100% / 70%);
       color: var(--fluidus-color-grey-900);
+      backdrop-filter: blur(10px);
     }
   }
 
-  // initial position of label
-  .fluidus-textarea:placeholder-shown + .fluidus-textarea-label::before {
+  // (initial) position of the label that shows the placeholder text
+  &:has(.fluidus-textarea:placeholder-shown) .fluidus-textarea-label::before {
     transform: translateY(-50%);
   }
 
-  .fluidus-textarea-label::before,
-  .fluidus-textarea:focus + .fluidus-textarea-label::before {
+  // position of the label if focussed
+  &:has(.fluidus-textarea:focus) .fluidus-textarea-label::before {
     transform: translateY(-100%) scale(0.75);
-
-    // color: var(--fluidus-color-grey-700);
+    color: var(--fluidus-color-grey-700);
   }
 
-  // label styles if focused
-  // .fluidus-textarea:focus + .fluidus-textarea-label::before {
-  //  color: blue;
-  // }
-
-  .fluidus-textarea-label--disabled {
-    &::before {
-      color: var(--fluidus-color-grey-400);
-    }
+  // disabled
+  &:has(.fluidus-textarea:disabled) .fluidus-textarea-label::before {
+    color: var(--fluidus-color-grey-400);
   }
 
   .fluidus-textarea-assistive-text,

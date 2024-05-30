@@ -17,13 +17,20 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const WithAssistiveText: Story = {
-  args: {},
+export const AssistiveText: Story = {
+  args: { assistiveText: "Assistive text" },
 };
 export const Disabled: Story = {
   args: { disabled: true },
 };
 
 export const Error: Story = {
-  // args: { error: true },
+  args: { error: true },
+};
+
+export const ErrorMessage: Story = {
+  args: {
+    error: true,
+    errorText: "You must fill in the field.",
+  },
 };

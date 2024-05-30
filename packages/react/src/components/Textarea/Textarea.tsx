@@ -6,6 +6,7 @@ export interface TextareaPropsBase extends ComponentProps<"textarea"> {
   assistiveText?: string;
   disabled?: boolean;
   label: string;
+  maxLength?: number;
   value?: string;
 }
 
@@ -28,41 +29,36 @@ export const Textarea = ({
   error = false,
   errorText,
   label,
+  maxLength = 500,
   value,
   ...rest
 }: TextareaProps) => {
-  const inputId = `input-${useId()}`;
+  const textareaId = `textarea-${useId()}`;
 
   return (
     <div className="fluidus-textarea-container">
-      <textarea
-        className={classNames(
-          "fluidus-textarea",
-          {
-            "fluidus-textarea--disabled": disabled,
-            "fluidus-textarea--error": error,
-          },
-          className,
-        )}
-        disabled={disabled}
-        id={inputId}
-        placeholder={label}
-        // ref={ref}
-        // type={type}
-        value={value}
-        {...rest}
-      />
       {label && (
         <label
-          className={classNames("fluidus-textarea-label", {
-            "fluidus-textarea-label--disabled": disabled,
-          })}
+          className={classNames("fluidus-textarea-label")}
           data-content={label}
-          htmlFor={inputId}
+          htmlFor={textareaId}
         >
           <span className="hidden--visually">{label}</span>
         </label>
       )}
+      <textarea
+        className={classNames(
+          "fluidus-textarea",
+          { "fluidus-textarea--error": error },
+          className,
+        )}
+        disabled={disabled}
+        id={textareaId}
+        maxLength={maxLength}
+        placeholder={label}
+        value={value}
+        {...rest}
+      />
       {error && errorText !== "" && (
         <div aria-invalid="true" className="fluidus-textarea-error-text">
           {errorText}
@@ -75,4 +71,4 @@ export const Textarea = ({
   );
 };
 
-// Textarea.displayName = "Input";
+// Textarea.displayName = "Textarea";

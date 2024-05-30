@@ -27,7 +27,7 @@ const meta = {
     children: { table: { disable: true } },
     className: { control: false },
     size: { control: "select" },
-    style: { control: false },
+    style: { table: { disable: true } },
   },
   args: {},
 } satisfies Meta<typeof ContentLayout>;

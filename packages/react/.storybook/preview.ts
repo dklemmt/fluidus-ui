@@ -36,7 +36,9 @@ export const globalTypes = {
 
 const preview: Preview = {
   decorators: [(Story, context) => withColorScheme(Story, context)],
-
+  argTypes: {
+    // className: { description: "test" },
+  },
   parameters: {
     // actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -66,7 +68,6 @@ const preview: Preview = {
     //   viewports: { ...MINIMAL_VIEWPORTS, ...customViewports },
     // },
   },
-  // tags: ["autodocs"],
 };
 
 export default preview;

@@ -42,11 +42,6 @@
     shape-outside: circle();
   }
 
-  // &--video.fluidus-video {
-  //  clip-path: ellipse(150px 75px);
-  //  shape-outside: ellipse(150px 75px);
-  // }
-
   &--media-right.fluidus-image,
   &--media-right.fluidus-video {
     --media-margin: var(--media-margin-right-medium);
@@ -57,7 +52,7 @@
   &--media-halo {
     padding: var(--fluidus-size-space-xxxsmall);
     border: var(--halo-size) solid var(--fluidus-color-orange-300);
-    border-radius: 50%;
+    border-radius: var(--fluidus-size-radius-circle);
   }
 
   &--media-small.fluidus-image,

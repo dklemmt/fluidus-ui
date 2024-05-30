@@ -1,0 +1,35 @@
+import { Meta, Source } from '@storybook/addon-docs';
+
+<Meta title="Getting Started" />
+
+# Getting Started
+
+## Prerequisites
+
+To get started with using *Fluidus UI* aka *Fluidus* in your project, you'll need the following packages:
+
+- **React and ReactDOM**: *Fluidus* is built on top of React, so you'll need both React and ReactDOM. It's recommended to use React version 19 or higher for optimal compatibility and performance.
+
+- **Sass**: *Fluidus* uses Sass for styling. Ensure you have Sass installed globally or as a dependency in your project. The version should be 1.23 or higher.
+
+- **Build System**: You'll need a suitable build system for your project. Popular options include webpack, Parcel, or Rollup. These tools help manage dependencies, bundle your code, and perform other build tasks.
+
+Once you have these packages installed, you can integrate *Fluidus* into your project and start building modern web applications with its components. Remember to configure your build system to handle TypeScript files if necessary and to transpile the source files into your target platform, possibly using Babel.
+
+## Installation
+
+*Fluidus React* is the collection of UI components used in React projects. It is always installed together with *Fluidus Core*, which contains the overall basic CSS styles.
+
+<Source code={`npm i --save @fluidus-ui/react @fluidus-ui/core`} dark language="bash"/>
+
+This command will install both packages and save them as dependencies in your project's `package.json` file. With *Fluidus React* and *Fluidus Core* installed, you'll have access to the collection of UI components for React projects along with the basic CSS styles needed for styling those components consistently.
+
+## Usage
+
+To include the Sass files from *Fluidus Core* in your application, you should do so at a central location and as early as possible. Here's how you can achieve that:
+
+<Source code={`// Include all Fluidus core functionality
+@use "@fluidus-ui/core/src/scss" as fluidus;
+`} dark />
+
+By including the Sass files from Fluidus Core at a central location and early in your application, you ensure that the core styles are applied consistently throughout your project. This helps maintain a cohesive design and ensures that the UI components from Fluidus React render correctly with the associated styles.

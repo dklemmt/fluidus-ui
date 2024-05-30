@@ -18,12 +18,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-};
-
 export const Multiline: Story = {
   args: {
     children: (
@@ -32,5 +26,34 @@ export const Multiline: Story = {
         eirmod tempor invidunt ut labore et.
       </>
     ),
+  },
+};
+
+export const AssistiveText: Story = {
+  args: { assistiveText: "Assistive text" },
+};
+
+export const Checked: Story = {
+  args: {
+    checked: true,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+};
+
+export const Error: Story = {
+  args: {
+    error: true,
+  },
+};
+
+export const ErrorMessage: Story = {
+  args: {
+    error: true,
+    errorText: "You must tick the checkbox.",
   },
 };

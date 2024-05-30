@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { ComponentProps, ForwardedRef, forwardRef, useId } from "react";
 import "./Input.scss";
 
-interface InputPropsBase {
+interface InputPropsBase extends ComponentProps<"input"> {
   assistiveText?: string;
   className?: string;
   disabled?: boolean;
@@ -35,7 +35,7 @@ export const Input = forwardRef(
       type = "text",
       value,
       ...rest
-    }: ComponentProps<"input"> & InputProps,
+    }: InputProps,
     ref: ForwardedRef<HTMLInputElement>,
   ) => {
     const inputId = `input-${useId()}`;
@@ -45,10 +45,7 @@ export const Input = forwardRef(
         <input
           className={classNames(
             "fluidus-input",
-            {
-              "fluidus-input--disabled": disabled,
-              "fluidus-input--error": error,
-            },
+            { "fluidus-input--error": error },
             className,
           )}
           disabled={disabled}
@@ -61,22 +58,20 @@ export const Input = forwardRef(
         />
         {label && (
           <label
-            className={classNames("fluidus-input-label", {
-              "fluidus-input-label--disabled": disabled,
-            })}
+            className={classNames("fluidus-input-label")}
             data-content={label}
             htmlFor={inputId}
           >
             <span className="hidden--visually">{label}</span>
           </label>
         )}
+        {assistiveText && (
+          <div className="fluidus-input-assistive-text">{assistiveText}</div>
+        )}
         {error && errorText !== "" && (
           <div aria-invalid="true" className="fluidus-input-error-text">
             {errorText}
           </div>
-        )}
-        {assistiveText && (
-          <div className="fluidus-input-assistive-text">{assistiveText}</div>
         )}
       </div>
     );
@@ -84,5 +79,3 @@ export const Input = forwardRef(
 );
 
 Input.displayName = "Input";
-
-export default Input;
