@@ -1,0 +1,34 @@
+.fluidus-button {
+  padding: var(--fluidus-size-space-xxsmall) var(--fluidus-size-space-xsmall);
+  transition: all 250ms ease-in-out;
+  border: 1px solid transparent;
+  border-radius: var(--fluidus-size-radius-small);
+  background-color: var(--fluidus-color-orange-500);
+  color: var(--fluidus-color-contrast-orange-500);
+  font-size: var(--fluidus-size-font-body-small-font-size);
+  line-height: 1;
+
+  &:focus {
+    // outline: var(--fluidus-focus-outline) var(--fluidus-focus-outline-color);
+    // outline-offset: var(--fluidus-focus-outline-offset);
+
+    outline: none;
+    box-shadow: 0 0 0 max(4px, 0.25em) var(--fluidus-focus-outline-color);
+  }
+
+  &:hover {
+    background-color: var(--fluidus-color-orange-300);
+    color: var(--fluidus-color-contrast-orange-300);
+  }
+
+  &:active {
+    background-color: var(--fluidus-color-orange-700);
+    color: var(--fluidus-color-contrast-orange-700);
+  }
+
+  &:disabled {
+    background-color: var(--fluidus-color-grey-100);
+    color: var(--fluidus-color-grey-400);
+    cursor: not-allowed;
+  }
+}

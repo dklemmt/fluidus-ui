@@ -1,6 +1,9 @@
 export type { BlockQuoteProps } from "@components/BlockQuote";
 export { BlockQuote } from "@components/BlockQuote";
 
+export type { ButtonProps } from "@components/Button";
+export { Button } from "@components/Button";
+
 export type { CheckboxProps } from "@components/Checkbox";
 export { Checkbox } from "@components/Checkbox";
 
