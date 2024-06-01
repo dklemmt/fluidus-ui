@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import { clsx } from "clsx";
 import { ComponentProps, useId } from "react";
 import "./Textarea.scss";
 
@@ -39,7 +39,7 @@ export const Textarea = ({
     <div className="fluidus-textarea-container">
       {label && (
         <label
-          className={classNames("fluidus-textarea-label")}
+          className={clsx("fluidus-textarea-label")}
           data-content={label}
           htmlFor={textareaId}
         >
@@ -47,7 +47,7 @@ export const Textarea = ({
         </label>
       )}
       <textarea
-        className={classNames(
+        className={clsx(
           "fluidus-textarea",
           { "fluidus-textarea--error": error },
           className,
@@ -71,4 +71,4 @@ export const Textarea = ({
   );
 };
 
-// Textarea.displayName = "Textarea";
+Textarea.displayName = "Textarea";

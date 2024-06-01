@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import { clsx } from "clsx";
 import {
   ComponentProps,
   ForwardedRef,
@@ -43,7 +43,7 @@ export const Checkbox = forwardRef(
     const hasChildren = !!children;
     const InputItem = (
       <input
-        className={classNames(
+        className={clsx(
           "fluidus-checkbox",
           { "fluidus-checkbox--error": error },
           className,
@@ -59,7 +59,7 @@ export const Checkbox = forwardRef(
       return (
         <div className="fluidus-checkbox-container">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-          <label className={classNames("fluidus-checkbox-label")}>
+          <label className={clsx("fluidus-checkbox-label")}>
             {InputItem}
             {children}
           </label>

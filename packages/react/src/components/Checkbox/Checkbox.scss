@@ -23,6 +23,7 @@
   height: 1.15em;
   margin: 0;
   transform: translateY(-0.075em);
+  transition: all 250ms ease-in-out;
   border: 0.125em solid currentcolor;
   border-radius: 0.15em;
   color: currentcolor;
@@ -35,7 +36,7 @@
     width: 0.65em;
     height: 0.65em;
     transform: scale(0);
-    transition: 120ms transform ease-in-out;
+    transition: transform 120ms ease-in-out;
 
     // background-color: CanvasText;
     box-shadow: inset 1em 1em var(--checkbox-color-tick);
@@ -44,7 +45,9 @@
 
   &:focus {
     outline: var(--fluidus-focus-outline) var(--fluidus-focus-outline-color);
+    outline: none;
     outline-offset: var(--fluidus-focus-outline-offset);
+    box-shadow: 0 0 0 3px var(--fluidus-focus-outline-color);
   }
 
   &:checked::before {

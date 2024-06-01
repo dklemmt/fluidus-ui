@@ -1,21 +1,16 @@
-import classNames from "classnames";
+import { clsx } from "clsx";
 import { ComponentProps, PropsWithChildren } from "react";
 import "./Link.scss";
 
-export interface LinkProps extends PropsWithChildren {
+export interface LinkProps extends ComponentProps<"a">, PropsWithChildren {
   className?: string;
   href: string;
 }
 
-export const Link = ({
-  children,
-  className,
-  href,
-  ...rest
-}: ComponentProps<"a"> & LinkProps) => (
-  <a className={classNames("fluidus-link", className)} href={href} {...rest}>
+export const Link = ({ children, className, href, ...rest }: LinkProps) => (
+  <a className={clsx("fluidus-link", className)} href={href} {...rest}>
     {children}
   </a>
 );
 
-export default Link;
+Link.displayName = "Link";

@@ -87,3 +87,5 @@ export const OffsetMedia = ({
     </div>
   );
 };
+
+OffsetMedia.displayName = "OffsetMedia";

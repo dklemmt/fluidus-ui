@@ -82,3 +82,5 @@ export const Video = ({
     ))}
   </video>
 );
+
+Video.displayName = "Video";

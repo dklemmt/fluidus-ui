@@ -5,10 +5,11 @@ import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 
 const nodeModulesPath = path.resolve(__dirname, "../../../node_modules");
 
+const getAbsolutePath = (value: string): any =>
+  dirname(require.resolve(join(value, "package.json")));
+
 const config: StorybookConfig = {
-  core: {
-    disableTelemetry: true,
-  },
+  core: { disableTelemetry: true },
   framework: getAbsolutePath("@storybook/react-webpack5"),
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
@@ -57,11 +58,7 @@ const config: StorybookConfig = {
           "css-loader",
           {
             loader: "sass-loader",
-            options: {
-              sassOptions: {
-                includePaths: [nodeModulesPath],
-              },
-            },
+            options: { sassOptions: { includePaths: [nodeModulesPath] } },
           },
         ],
         include: path.resolve(__dirname, "../"),
@@ -75,7 +72,3 @@ const config: StorybookConfig = {
 };
 
 export default config;
-
-function getAbsolutePath(value: string): any {
-  return dirname(require.resolve(join(value, "package.json")));
-}

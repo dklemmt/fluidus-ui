@@ -23,3 +23,5 @@ export const ContentSection = ({
     {...rest}
   />
 );
+
+ContentSection.displayName = "ContentSection";

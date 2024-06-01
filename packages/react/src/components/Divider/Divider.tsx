@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import { clsx } from "clsx";
 import { PropsWithChildren } from "react";
 import "./Divider.scss";
 
@@ -22,10 +22,10 @@ export const Divider = ({ children, className }: DividerProps) => {
   }
 
   return (
-    <div className={classNames("fluidus-divider", className)}>
+    <div className={clsx("fluidus-divider", className)}>
       <div className="fluidus-divider-container">{DividerItem}</div>
     </div>
   );
 };
 
-export default Divider;
+Divider.displayName = "Divider";

@@ -24,7 +24,8 @@ const meta = {
   title: "layout/Flex",
   component: Flex,
   argTypes: {
-    align: { control: "select", if: { arg: "wrap", neq: "nowrap" } },
+    alignContent: { control: "select", if: { arg: "wrap", neq: "nowrap" } },
+    alignItems: { control: "select" },
     children: { table: { disable: true } },
     className: { control: false },
     direction: { control: "select" },

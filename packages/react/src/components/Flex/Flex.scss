@@ -1,4 +1,4 @@
-$align-keys: (
+$align-content-keys: (
   "start",
   "end",
   "flex-start",
@@ -8,6 +8,17 @@ $align-keys: (
   "space-around",
   "space-evenly",
   "stretch"
+);
+$align-items-keys: (
+  "start",
+  "end",
+  "flex-start",
+  "flex-end",
+  "self-start",
+  "self-end",
+  "center",
+  "stretch",
+  "baseline"
 );
 $gap-keys: (
   "xxxlarge",
@@ -39,9 +50,16 @@ $wrap-keys: ("wrap", "wrap-reverse");
   display: flex;
 
   // align-content
-  @each $align in $align-keys {
-    &-align-#{$align} {
-      align-content: #{$align};
+  @each $align-content in $align-content-keys {
+    &-align-content-#{$align-content} {
+      align-content: #{$align-content};
+    }
+  }
+
+  // align-items
+  @each $align-items in $align-items-keys {
+    &-align-items-#{$align-items} {
+      align-items: #{$align-items};
     }
   }
 

@@ -35,3 +35,5 @@ export const ScrollToTop = () => {
     </div>
   );
 };
+
+ScrollToTop.displayName = "ScrollToTop";

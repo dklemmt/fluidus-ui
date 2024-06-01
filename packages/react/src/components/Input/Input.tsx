@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import { clsx } from "clsx";
 import { ComponentProps, ForwardedRef, forwardRef, useId } from "react";
 import "./Input.scss";
 
@@ -43,7 +43,7 @@ export const Input = forwardRef(
     return (
       <div className="fluidus-input-container">
         <input
-          className={classNames(
+          className={clsx(
             "fluidus-input",
             { "fluidus-input--error": error },
             className,
@@ -58,7 +58,7 @@ export const Input = forwardRef(
         />
         {label && (
           <label
-            className={classNames("fluidus-input-label")}
+            className={clsx("fluidus-input-label")}
             data-content={label}
             htmlFor={inputId}
           >

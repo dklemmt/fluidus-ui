@@ -19,3 +19,5 @@ export const Paragraph = ({
     {...rest}
   />
 );
+
+Paragraph.displayName = "Paragraph";

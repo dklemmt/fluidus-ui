@@ -3,6 +3,17 @@ import { PropsWithChildren } from "react";
 import "./Flex.scss";
 
 export interface FlexBaseProps extends PropsWithChildren {
+  alignItems?:
+    | "start"
+    | "end"
+    | "flex-start"
+    | "flex-end"
+    | "self-start"
+    | "self-end"
+    | "center"
+    | "stretch"
+    | "baseline";
+
   className?: string;
   direction?: "horizontal" | "vertical";
   /** The gap between elements */
@@ -34,12 +45,12 @@ export interface FlexBaseProps extends PropsWithChildren {
 }
 
 interface FlexNoWrapProps extends FlexBaseProps {
-  align?: "normal";
+  alignContent?: "normal";
   wrap?: "nowrap";
 }
 
 interface FlexWrapProps extends FlexBaseProps {
-  align?:
+  alignContent?:
     | "start"
     | "end"
     | "flex-start"
@@ -55,7 +66,8 @@ interface FlexWrapProps extends FlexBaseProps {
 export type FlexProps = FlexNoWrapProps | FlexWrapProps;
 
 export const Flex = ({
-  align = "normal",
+  alignContent = "normal",
+  alignItems = "stretch",
   children,
   className = "",
   direction = "horizontal",
@@ -68,7 +80,8 @@ export const Flex = ({
     className={clsx(
       `fluidus-flex`,
       {
-        [`fluidus-flex-align-${align}`]: align !== "normal",
+        [`fluidus-flex-align-${alignContent}`]: alignContent !== "normal",
+        [`fluidus-flex-align-items-${alignItems}`]: alignItems !== "stretch",
         [`fluidus-flex-direction-${direction}`]: direction !== "horizontal",
         [`fluidus-flex-gap-${gap}`]: !!gap,
         [`fluidus-flex-justify-${justify}`]: justify !== "normal",
@@ -81,3 +94,5 @@ export const Flex = ({
     {children}
   </div>
 );
+
+Flex.displayName = "Flex";

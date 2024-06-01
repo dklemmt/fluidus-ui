@@ -54,3 +54,5 @@ export const ContentLayout = ({
     </div>
   );
 };
+
+ContentLayout.displayName = "ContentLayout";

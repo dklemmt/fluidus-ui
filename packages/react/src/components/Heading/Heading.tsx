@@ -52,3 +52,5 @@ export const Heading = ({
     </HeadingTag>
   );
 };
+
+Heading.displayName = "Heading";

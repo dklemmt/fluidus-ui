@@ -51,3 +51,5 @@ export const Spinner = ({
 
   return SpinnerItem;
 };
+
+Spinner.displayName = "Spinner";
