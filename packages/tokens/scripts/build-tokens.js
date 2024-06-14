@@ -15,7 +15,7 @@ StyleDictionaryPackage.registerTransformGroup({
     "attribute/cti",
     "name/cti/kebab",
     "time/seconds",
-    "color/hex8",
+    //  "color/hex8",
   ],
 });
 StyleDictionaryPackage.registerTransformGroup({
@@ -95,7 +95,9 @@ const getStyleDictionaryConfig = (brand, tokens) => {
         ],
       },
       scss: {
+        buildPath: "dist/",
         transformGroup: "fluidus-scss",
+        prefix: brand.split("-")[0],
         files: [
           {
             // Sass Variables and Map
@@ -109,9 +111,11 @@ const getStyleDictionaryConfig = (brand, tokens) => {
       },
       js: {
         transformGroup: "fluidus-js",
+        buildPath: "dist/",
+        prefix: brand.split("-")[0],
         files: [
           {
-            // Sass Variables and Map
+            // JS Variables
             destination: `${brand}/js/${brand}.js`,
             format: "javascript/module",
             options: {
@@ -145,7 +149,8 @@ const getStyleDictionaryConfig = (brand, tokens) => {
 const brands = path.resolve(__dirname, `../src`);
 if (fs.existsSync(brands)) {
   fs.readdirSync(brands).forEach((brand) => {
-    ["css"].map((platform) => {
+    // eslint-disable-next-line array-callback-return
+    ["css", "scss", "js"].map((platform) => {
       const StyleDictionary = StyleDictionaryPackage.extend(
         getStyleDictionaryConfig(brand),
       );
