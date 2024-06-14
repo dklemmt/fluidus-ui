@@ -44,3 +44,8 @@ $enable-hyphenation: true !default;
     }
   }
 }
+
+@mixin typography($name) {
+  font-size: var(--fluidus-size-font-#{$name}-font-size);
+  line-height: var(--fluidus-size-font-#{$name}-line-height);
+}

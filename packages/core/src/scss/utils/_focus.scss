@@ -1,0 +1,8 @@
+@mixin focus {
+  &:focus {
+    transition: box-shadow 250ms ease-in-out;
+    outline: none;
+    box-shadow: 0 0 0 var(--fluidus-size-focus-outline)
+      var(--fluidus-color-focus-outline);
+  }
+}

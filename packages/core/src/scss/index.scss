@@ -1,10 +1,10 @@
 @charset "UTF-8";
 @use "@fluidus-ui/tokens/dist/fluidus/css/fluidus";
-@use "utils";
 @use "config";
-@use "typography";
+@use "fluidus" as fluidus-core;
 
 // @use "@fluidus-ui/tokens/dist/fluidus-dark/css/fluidus-dark";
 
-@forward "utils";
-@include typography.typography-base;
+@forward "fluidus";
+@include fluidus-core.normalise;
+@include fluidus-core.typography-base;

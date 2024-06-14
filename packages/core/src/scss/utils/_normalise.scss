@@ -1,32 +1,34 @@
-// border-box sizing in all browsers
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
+@mixin normalise {
+  // border-box sizing in all browsers
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
 
-// remove body margin in all browsers
-body {
-  margin: 0;
-}
+  // remove body margin in all browsers
+  body {
+    margin: 0;
+  }
 
-:is(h1, h2, h3, h4, h5, h6, p) {
-  margin: 0;
-}
+  :is(h1, h2, h3, h4, h5, h6, p) {
+    margin: 0;
+  }
 
-// remove list-style in navigation in all browsers
-nav ol,
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+  // remove list-style in navigation in all browsers
+  nav ol,
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
 }
