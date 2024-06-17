@@ -1,11 +1,15 @@
-.fluidus-paragraph--medium {
+.fluidus-paragraph {
   font-size: var(--fluidus-size-font-body-medium-font-size);
-}
 
-.fluidus-paragraph--small {
-  font-size: var(--fluidus-size-font-body-small-font-size);
-}
+  &--large {
+    font-size: var(--fluidus-size-font-body-large-font-size);
+  }
 
-.fluidus-paragraph--xsmall {
-  font-size: var(--fluidus-size-font-body-xsmall-font-size);
+  &--small {
+    font-size: var(--fluidus-size-font-body-small-font-size);
+  }
+
+  &--xsmall {
+    font-size: var(--fluidus-size-font-body-xsmall-font-size);
+  }
 }

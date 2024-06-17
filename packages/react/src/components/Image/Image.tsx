@@ -74,6 +74,7 @@ export const Image = ({
     image.addEventListener("load", handleLoad);
     image.addEventListener("error", handleError);
 
+    // eslint-disable-next-line consistent-return
     return () => {
       image.removeEventListener("load", handleLoad);
       image.removeEventListener("error", handleError);

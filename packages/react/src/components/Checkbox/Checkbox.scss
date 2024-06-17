@@ -1,19 +1,26 @@
+@use "@fluidus-ui/core/src/scss/fluidus";
+
 .fluidus-checkbox,
 .fluidus-checkbox-label {
   --checkbox-color-tick: var(--fluidus-color-orange-700);
-  --checkbox-color-disabled: var(--fluidus-color-grey-400);
 }
 
 .fluidus-checkbox-label {
+  @include fluidus.typography(body-medium);
+
   display: grid;
   grid-template-columns: 1em auto;
   align-items: baseline;
-  gap: var(--fluidus-size-space-xsmall);
-  font-size: var(--fluidus-size-font-body-medium-font-size);
+  gap: var(--fluidus-size-space-xxxsmall) var(--fluidus-size-space-xsmall);
 
   &:has(.fluidus-checkbox:disabled) {
-    color: var(--checkbox-color-disabled);
+    color: var(--fluidus-color-form-disabled);
     cursor: not-allowed;
+  }
+
+  .fluidus-assistive-text,
+  .fluidus-error-text {
+    grid-column-start: 2;
   }
 }
 
@@ -23,7 +30,6 @@
   height: 1.15em;
   margin: 0;
   transform: translateY(-0.075em);
-  transition: all 250ms ease-in-out;
   border: 0.125em solid currentcolor;
   border-radius: 0.15em;
   color: currentcolor;
@@ -37,46 +43,24 @@
     height: 0.65em;
     transform: scale(0);
     transition: transform 120ms ease-in-out;
-
-    // background-color: CanvasText;
     box-shadow: inset 1em 1em var(--checkbox-color-tick);
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   }
 
-  &:focus {
-    outline: var(--fluidus-focus-outline) var(--fluidus-focus-outline-color);
-    outline: none;
-    outline-offset: var(--fluidus-focus-outline-offset);
-    box-shadow: 0 0 0 3px var(--fluidus-focus-outline-color);
-  }
+  @include fluidus.focus;
 
   &:checked::before {
     transform: scale(1);
   }
 
   &:disabled {
-    --checkbox-color-tick: var(--checkbox-color-disabled);
+    --checkbox-color-tick: var(--fluidus-color-form-disabled);
 
-    color: var(--checkbox-color-tick);
+    color: var(--fluidus-color-form-disabled);
     cursor: not-allowed;
   }
 
   &--error {
-    border-color: var(--fluidus-color-red-500);
+    border-color: var(--fluidus-color-form-error);
   }
-}
-
-.fluidus-checkbox-assistive-text,
-.fluidus-checkbox-error-text {
-  --text-offset-left: calc(
-    var(--fluidus-size-space-xxsmall) + 1px
-  ); // 1px due to border
-
-  padding-top: var(--fluidus-size-space-xxxsmall);
-  padding-left: var(--text-offset-left);
-  font-size: var(--fluidus-size-font-body-xsmall-font-size);
-}
-
-.fluidus-checkbox-error-text {
-  color: var(--fluidus-color-red-500);
 }

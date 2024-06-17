@@ -1,5 +1,7 @@
 import { clsx } from "clsx";
 import { ComponentProps, ForwardedRef, forwardRef, useId } from "react";
+import { AssistiveText } from "@components/AssistiveText";
+import { ErrorText } from "@components/ErrorText";
 import "./Input.scss";
 
 interface InputPropsBase extends ComponentProps<"input"> {
@@ -65,13 +67,9 @@ export const Input = forwardRef(
             <span className="hidden--visually">{label}</span>
           </label>
         )}
-        {assistiveText && (
-          <div className="fluidus-input-assistive-text">{assistiveText}</div>
-        )}
-        {error && errorText !== "" && (
-          <div aria-invalid="true" className="fluidus-input-error-text">
-            {errorText}
-          </div>
+        {assistiveText && <AssistiveText>{assistiveText}</AssistiveText>}
+        {error && errorText && errorText?.trim() !== "" && (
+          <ErrorText>{errorText}</ErrorText>
         )}
       </div>
     );

@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Paragraph } from "./Paragraph";
 
 const meta = {
+  title: "typography/Paragraph",
   component: Paragraph,
   argTypes: {
     children: { table: { disable: true } },
@@ -19,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 const AllSizesTemplate: Story = {
   render: ({ ...args }) => (
     <>
-      {/*<Paragraph size="large">{meta.args.children} (large)</Paragraph>*/}
+      <Paragraph size="large">{meta.args.children} (large)</Paragraph>
       <Paragraph>{meta.args.children} (medium)</Paragraph>
       <Paragraph size="small">{meta.args.children} (small)</Paragraph>
       <Paragraph size="xsmall">{meta.args.children} (xsmall)</Paragraph>

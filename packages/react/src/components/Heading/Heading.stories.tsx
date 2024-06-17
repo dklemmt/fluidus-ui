@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Heading } from "./Heading";
 
 const meta = {
+  title: "typography/Heading",
   component: Heading,
   argTypes: {
     children: { table: { disable: true } },

@@ -28,8 +28,8 @@ export interface FlexBaseProps extends PropsWithChildren {
     | "xxsmall"
     | "xxxsmall"
     | null;
-  // justify?: CSSProperties["justifyContent"];
-  justify?:
+  // justifyContent?: CSSProperties["justifyContent"];
+  justifyContent?:
     | "space-around"
     | "space-between"
     | "space-evenly"
@@ -72,7 +72,7 @@ export const Flex = ({
   className = "",
   direction = "horizontal",
   gap = "medium",
-  justify = "normal",
+  justifyContent = "normal",
   wrap = "nowrap",
   ...rest
 }: FlexProps) => (
@@ -84,7 +84,8 @@ export const Flex = ({
         [`fluidus-flex-align-items-${alignItems}`]: alignItems !== "stretch",
         [`fluidus-flex-direction-${direction}`]: direction !== "horizontal",
         [`fluidus-flex-gap-${gap}`]: !!gap,
-        [`fluidus-flex-justify-${justify}`]: justify !== "normal",
+        [`fluidus-flex-justify-content-${justifyContent}`]:
+          justifyContent !== "normal",
         [`fluidus-flex-wrap-${wrap}`]: wrap !== "nowrap",
       },
       className,

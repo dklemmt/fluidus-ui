@@ -4,8 +4,7 @@ import "./Paragraph.scss";
 
 export interface ParagraphProps extends ComponentProps<"p">, PropsWithChildren {
   className?: string;
-  // size?: 'large' | 'medium' | 'small' | 'xsmall';
-  size?: "medium" | "small" | "xsmall";
+  size?: "large" | "medium" | "small" | "xsmall";
 }
 
 export const Paragraph = ({
@@ -14,7 +13,11 @@ export const Paragraph = ({
   ...rest
 }: ParagraphProps) => (
   <p
-    className={clsx(`fluidus-paragraph--${size}`, className)}
+    className={clsx(
+      "fluidus-paragraph",
+      { [`fluidus-paragraph--${size}`]: size !== "medium" },
+      className,
+    )}
     data-testid="paragraph"
     {...rest}
   />

@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import { Flex } from "../Flex";
 
 describe("Flex component", () => {
@@ -35,17 +36,17 @@ describe("Flex component", () => {
   });
 
   it("renders flex container with specified justify content", () => {
-    const { container } = render(<Flex justify="center" />);
+    const { container } = render(<Flex justifyContent="center" />);
     const flexContainer = container.firstChild as HTMLDivElement;
 
-    expect(flexContainer).toHaveClass("fluidus-flex-justify-center");
+    expect(flexContainer).toHaveClass("fluidus-flex-justify-content-center");
   });
 
   it("renders flex container with specified align items", () => {
-    const { container } = render(<Flex align="center" />);
+    const { container } = render(<Flex alignContent="center" />);
     const flexContainer = container.firstChild as HTMLDivElement;
 
-    expect(flexContainer).toHaveClass("fluidus-flex-align-center");
+    expect(flexContainer).toHaveClass("fluidus-flex-align-content-center");
   });
 
   it("renders flex container with wrap", () => {

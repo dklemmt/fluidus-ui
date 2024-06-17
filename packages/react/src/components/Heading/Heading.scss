@@ -1,30 +1,23 @@
-.fluidus-heading--xlarge,
-.fluidus-heading--large,
-.fluidus-heading--medium,
-.fluidus-heading--small,
-.fluidus-heading--xsmall {
+.fluidus-heading {
   color: inherit;
   font-family: var(--fluidus-base-font-family-heading);
+  font-size: var(--fluidus-size-font-heading-medium-font-size);
   font-style: normal;
   font-weight: normal;
-}
 
-.fluidus-heading--xlarge {
-  font-size: var(--fluidus-size-font-heading-xlarge-font-size);
-}
+  &--xlarge {
+    font-size: var(--fluidus-size-font-heading-xlarge-font-size);
+  }
 
-.fluidus-heading--large {
-  font-size: var(--fluidus-size-font-heading-large-font-size);
-}
+  &--large {
+    font-size: var(--fluidus-size-font-heading-large-font-size);
+  }
 
-.fluidus-heading--medium {
-  font-size: var(--fluidus-size-font-heading-medium-font-size);
-}
+  &--small {
+    font-size: var(--fluidus-size-font-heading-small-font-size);
+  }
 
-.fluidus-heading--small {
-  font-size: var(--fluidus-size-font-heading-small-font-size);
-}
-
-.fluidus-heading--xsmall {
-  font-size: var(--fluidus-size-font-heading-xsmall-font-size);
+  &--xsmall {
+    font-size: var(--fluidus-size-font-heading-xsmall-font-size);
+  }
 }

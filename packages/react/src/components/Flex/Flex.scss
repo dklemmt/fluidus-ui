@@ -31,7 +31,7 @@ $gap-keys: (
   "xxsmall",
   "xxxsmall"
 );
-$justify-keys: (
+$justify-content-keys: (
   "space-around",
   "space-between",
   "space-evenly",
@@ -83,9 +83,9 @@ $wrap-keys: ("wrap", "wrap-reverse");
   }
 
   // justify-content
-  @each $justify in $justify-keys {
-    &-justify-#{$justify} {
-      justify-content: #{$justify};
+  @each $justify-content in $justify-content-keys {
+    &-justify-content-#{$justify-content} {
+      justify-content: #{$justify-content};
     }
   }
 }

@@ -8,12 +8,8 @@ const meta = {
     className: { control: false },
   },
   args: {
-    children: (
-      <>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et.
-      </>
-    ),
+    children:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
   },
 } satisfies Meta<typeof BlockQuote>;
 export default meta;

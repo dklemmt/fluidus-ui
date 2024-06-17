@@ -30,7 +30,7 @@ const meta = {
     className: { control: false },
     direction: { control: "select" },
     gap: { control: "select" },
-    justify: { control: "select" },
+    justifyContent: { control: "select" },
     wrap: { control: "select" },
   },
   args: {

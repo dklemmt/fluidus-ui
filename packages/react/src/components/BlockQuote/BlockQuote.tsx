@@ -1,9 +1,9 @@
 import { clsx } from "clsx";
-import { ComponentProps, PropsWithChildren } from "react";
+import { BlockquoteHTMLAttributes, PropsWithChildren } from "react";
 import "./BlockQuote.scss";
 
 export interface BlockQuoteProps
-  extends ComponentProps<"div">,
+  extends BlockquoteHTMLAttributes<HTMLQuoteElement>,
     PropsWithChildren {
   className?: string;
   source?: string;
@@ -11,13 +11,27 @@ export interface BlockQuoteProps
 
 export const BlockQuote = ({
   children,
-  className,
-  source,
+  className = "",
+  source = "",
+  ...rest
 }: BlockQuoteProps) => (
-  <div className={clsx("fluidus-block-quote", className)}>
-    <div className="fluidus-block-quote--quote">{children}</div>
-    {source && <div className="fluidus-block-quote--source">{source}</div>}
-  </div>
+  <blockquote
+    className={clsx("fluidus-block-quote", className)}
+    data-testid="block-quote"
+    {...rest}
+  >
+    <div className="fluidus-block-quote--quote" data-testid="block-quote-quote">
+      {children}
+    </div>
+    {source && (
+      <cite
+        className="fluidus-block-quote--source"
+        data-testid="block-quote-source"
+      >
+        {source}
+      </cite>
+    )}
+  </blockquote>
 );
 
 BlockQuote.displayName = "BlockQuote";

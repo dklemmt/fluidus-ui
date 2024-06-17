@@ -1,5 +1,7 @@
 import { clsx } from "clsx";
 import { ComponentProps, useId } from "react";
+import { AssistiveText } from "@components/AssistiveText";
+import { ErrorText } from "@components/ErrorText";
 import "./Textarea.scss";
 
 export interface TextareaPropsBase extends ComponentProps<"textarea"> {
@@ -59,13 +61,9 @@ export const Textarea = ({
         value={value}
         {...rest}
       />
-      {error && errorText !== "" && (
-        <div aria-invalid="true" className="fluidus-textarea-error-text">
-          {errorText}
-        </div>
-      )}
-      {assistiveText && (
-        <div className="fluidus-textarea-assistive-text">{assistiveText}</div>
+      {assistiveText && <AssistiveText>{assistiveText}</AssistiveText>}
+      {error && errorText && errorText?.trim() !== "" && (
+        <ErrorText>{errorText}</ErrorText>
       )}
     </div>
   );

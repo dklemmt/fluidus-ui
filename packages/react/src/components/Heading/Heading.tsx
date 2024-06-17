@@ -39,7 +39,11 @@ export const Heading = ({
   size = "xlarge",
   ...rest
 }: HeadingProps) => {
-  const headingClassName = clsx(`fluidus-heading--${size}`, className);
+  const headingClassName = clsx(
+    "fluidus-heading",
+    { [`fluidus-heading--${size}`]: size !== "medium" },
+    className,
+  );
 
   return (
     <HeadingTag

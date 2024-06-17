@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Checkbox } from "./Checkbox";
-import { Paragraph } from "../Paragraph";
 
 const meta = {
   title: "forms/Checkbox",
@@ -10,7 +9,7 @@ const meta = {
     className: { control: false },
   },
   args: {
-    children: <>Lorem ipsum dolor sit amet</>,
+    children: "Lorem ipsum dolor sit amet",
   },
 } satisfies Meta<typeof Checkbox>;
 export default meta;
@@ -20,12 +19,8 @@ export const Default: Story = {};
 
 export const Multiline: Story = {
   args: {
-    children: (
-      <>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et.
-      </>
-    ),
+    children:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
   },
 };
 
@@ -33,27 +28,12 @@ export const AssistiveText: Story = {
   args: { assistiveText: "Assistive text" },
 };
 
-export const Checked: Story = {
-  args: {
-    checked: true,
-  },
-};
+export const Checked: Story = { args: { checked: true } };
 
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-};
+export const Disabled: Story = { args: { disabled: true } };
 
-export const Error: Story = {
-  args: {
-    error: true,
-  },
-};
+export const Error: Story = { args: { error: true } };
 
 export const ErrorMessage: Story = {
-  args: {
-    error: true,
-    errorText: "You must tick the checkbox.",
-  },
+  args: { error: true, errorText: "You must tick the checkbox." },
 };

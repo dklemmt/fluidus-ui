@@ -5,6 +5,8 @@ import {
   PropsWithChildren,
   forwardRef,
 } from "react";
+import { AssistiveText } from "@components/AssistiveText";
+import { ErrorText } from "@components/ErrorText";
 import "./Checkbox.scss";
 
 export interface CheckboxPropsBase
@@ -30,9 +32,9 @@ export type CheckboxProps = CheckboxPropsError | CheckboxPropsValid;
 export const Checkbox = forwardRef(
   (
     {
-      assistiveText,
+      assistiveText = "",
       children,
-      className,
+      className = "",
       disabled = false,
       error = false,
       errorText,
@@ -62,17 +64,11 @@ export const Checkbox = forwardRef(
           <label className={clsx("fluidus-checkbox-label")}>
             {InputItem}
             {children}
+            {assistiveText && <AssistiveText>{assistiveText}</AssistiveText>}
+            {error && errorText && errorText?.trim() !== "" && (
+              <ErrorText>{errorText}</ErrorText>
+            )}
           </label>
-          {assistiveText && (
-            <div className="fluidus-checkbox-assistive-text">
-              {assistiveText}
-            </div>
-          )}
-          {error && errorText !== "" && (
-            <div aria-invalid="true" className="fluidus-checkbox-error-text">
-              {errorText}
-            </div>
-          )}
         </div>
       );
     }

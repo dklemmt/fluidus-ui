@@ -1,31 +1,33 @@
-// @use "@fluidus-ui/tokens/dist/fluidus/css/components/spinner.css";
+@use "@fluidus-ui/core/src/scss/fluidus";
 
 .fluidus-textarea-container {
   --text-offset-left: calc(
     var(--fluidus-size-space-xxsmall) + 1px
   ); // 1px due to border
 
+  @include fluidus.typography(body-medium);
+
   .fluidus-textarea {
+    @include fluidus.typography(body-medium);
+
+    display: block;
     width: min(100%, 40ch);
     padding: calc(var(--fluidus-size-space-medium) - 4px)
       var(--fluidus-size-space-xxsmall) var(--fluidus-size-space-xxsmall);
     border: 1px solid var(--fluidus-color-orange-400);
     border-radius: var(--fluidus-size-radius-small);
     font-family: var(--fluidus-base-font-family-base);
-    font-size: var(--fluidus-size-font-body-small-font-size);
 
-    &:focus {
-      outline: var(--fluidus-focus-outline) var(--fluidus-focus-outline-color);
-      outline-offset: var(--fluidus-focus-outline-offset);
-    }
+    @include fluidus.focus;
 
     &:disabled {
-      border-color: var(--fluidus-color-grey-300);
+      border-color: var(--fluidus-color-form-disabled);
+      color: var(--fluidus-color-form-disabled-text);
       cursor: not-allowed;
     }
 
     &--error {
-      border-color: var(--fluidus-color-red-500);
+      border-color: var(--fluidus-color-form-error);
     }
 
     // hide placeholder
@@ -54,12 +56,9 @@
         )
       );
       left: var(--text-offset-left);
-      transform: translateY(-100%) scale(0.75);
+      transform: translateY(-90%) scale(0.7);
       transform-origin: left top;
       transition: transform 0.2s ease;
-      background-color: hsl(0deg 0% 100% / 70%);
-      color: var(--fluidus-color-grey-900);
-      backdrop-filter: blur(10px);
     }
   }
 
@@ -70,23 +69,16 @@
 
   // position of the label if focussed
   &:has(.fluidus-textarea:focus) .fluidus-textarea-label::before {
-    transform: translateY(-100%) scale(0.75);
-    color: var(--fluidus-color-grey-700);
+    transform: translateY(-90%) scale(0.7);
   }
 
   // disabled
   &:has(.fluidus-textarea:disabled) .fluidus-textarea-label::before {
-    color: var(--fluidus-color-grey-400);
+    color: var(--fluidus-color-form-disabled-text);
   }
 
-  .fluidus-textarea-assistive-text,
-  .fluidus-textarea-error-text {
-    padding-top: var(--fluidus-size-space-xxxsmall);
-    padding-left: var(--text-offset-left);
-    font-size: var(--fluidus-size-font-body-xsmall-font-size);
-  }
-
-  .fluidus-textarea-error-text {
-    color: var(--fluidus-color-red-500);
+  .fluidus-assistive-text,
+  .fluidus-error-text {
+    padding-top: var(--fluidus-size-space-xxsmall);
   }
 }

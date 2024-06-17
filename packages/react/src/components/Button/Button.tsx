@@ -18,7 +18,7 @@ export interface ButtonPropsBase
 
 interface ButtonButtonProps extends ButtonPropsBase {
   href?: never;
-  type: "button" | "submit" | "reset";
+  type: "button" | "reset" | "submit";
 }
 
 interface ButtonLinkProps extends ButtonPropsBase {
