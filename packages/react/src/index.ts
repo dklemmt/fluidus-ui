@@ -1,3 +1,6 @@
+export type { AssistiveTextProps } from "@components/AssistiveText";
+export { AssistiveText } from "@components/AssistiveText";
+
 export type { BlockQuoteProps } from "@components/BlockQuote";
 export { BlockQuote } from "@components/BlockQuote";
 
@@ -15,6 +18,9 @@ export { ContentSection } from "@components/ContentLayout/ContentSection";
 export type { DividerProps } from "@components/Divider";
 export { Divider } from "@components/Divider";
 
+export type { ErrorTextProps } from "@components/ErrorText";
+export { ErrorText } from "@components/ErrorText";
+
 export type { FlexProps } from "@components/Flex";
 export { Flex } from "@components/Flex";
 
@@ -27,20 +33,19 @@ export { Image } from "@components/Image";
 export type { InputProps } from "@components/Input";
 export { Input } from "@components/Input";
 
-// export type { LabelProps } from "@components/Label";
-// export { Label } from "@components/Label";
-
 export type { LinkProps } from "@components/Link";
 export { Link } from "@components/Link";
-
-// export type { MapProps } from "@components/Map";
-// export { Map } from "@components/Map";
 
 export type { OffsetMediaProps } from "@components/OffsetMedia";
 export { OffsetMedia } from "@components/OffsetMedia";
 
 export type { ParagraphProps } from "@components/Paragraph";
 export { Paragraph } from "@components/Paragraph";
+
+export type { RadioProps } from "@components/Radio";
+export { Radio } from "@components/Radio";
+export type { RadioGroupProps } from "@components/Radio/RadioGroup";
+export { RadioGroup } from "@components/Radio/RadioGroup";
 
 export { ScrollToTop } from "@components/ScrollToTop";
 

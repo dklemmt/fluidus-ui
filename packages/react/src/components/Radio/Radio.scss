@@ -1,0 +1,66 @@
+@use "@fluidus-ui/core/src/scss/fluidus";
+
+.fluidus-radio,
+.fluidus-radio-label {
+  --radio-color-tick: var(--fluidus-color-orange-700);
+}
+
+.fluidus-radio-label {
+  @include fluidus.typography(body-medium);
+
+  display: grid;
+  grid-template-columns: 1em auto;
+  align-items: baseline;
+  gap: var(--fluidus-size-space-xxxsmall) var(--fluidus-size-space-xsmall);
+
+  &:has(.fluidus-radio:disabled) {
+    color: var(--fluidus-color-form-disabled);
+    cursor: not-allowed;
+  }
+
+  .fluidus-assistive-text,
+  .fluidus-error-text {
+    grid-column-start: 2;
+  }
+}
+
+.fluidus-radio {
+  display: grid;
+  width: 1.15em;
+  height: 1.15em;
+  margin: 0;
+  transform: translateY(-0.075em);
+  border: 0.125em solid currentcolor;
+  border-radius: var(--fluidus-size-radius-circle);
+  color: currentcolor;
+  font: inherit;
+  place-content: center;
+  appearance: none;
+
+  &::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: transform 120ms ease-in-out;
+    border-radius: var(--fluidus-size-radius-circle);
+    box-shadow: inset 1em 1em var(--radio-color-tick);
+  }
+
+  @include fluidus.focus;
+
+  &:checked::before {
+    transform: scale(1);
+  }
+
+  &:disabled {
+    --radio-color-tick: var(--fluidus-color-form-disabled);
+
+    color: var(--fluidus-color-form-disabled);
+    cursor: not-allowed;
+  }
+
+  &--error {
+    border-color: var(--fluidus-color-form-error);
+  }
+}

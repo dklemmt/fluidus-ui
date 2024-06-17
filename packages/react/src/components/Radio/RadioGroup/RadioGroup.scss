@@ -1,0 +1,19 @@
+@use "@fluidus-ui/core/src/scss/utils";
+
+.fluidus-radio-group-container {
+  .fluidus-assistive-text,
+  .fluidus-error-text {
+    padding-top: var(--fluidus-size-space-xxsmall);
+  }
+}
+
+.fluidus-radio-group {
+  display: flex;
+  flex-flow: column wrap;
+  gap: var(--fluidus-size-space-xxxsmall) var(--fluidus-size-space-small);
+
+  // flex-direction
+  &-orientation-horizontal {
+    flex-direction: row;
+  }
+}
