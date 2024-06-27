@@ -7,8 +7,8 @@ const meta = {
   args: {},
   decorators: [
     (Story) => (
-      <div style={{ height: "300px" }}>
-        <p>Please scroll the page.</p>
+      <div style={{ height: "200px" }}>
+        <p>Please scroll down the page.</p>
         <Story />
       </div>
     ),

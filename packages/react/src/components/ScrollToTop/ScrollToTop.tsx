@@ -3,8 +3,13 @@ import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import "./ScrollToTop.scss";
 
-// eslint-disable-next-line import/prefer-default-export
-export const ScrollToTop = () => {
+export interface ScrollToTopProps {
+  ariaLabel?: string;
+}
+
+export const ScrollToTop = ({
+  ariaLabel = "Scroll to top",
+}: ScrollToTopProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScrollToTop = () => {
@@ -28,10 +33,19 @@ export const ScrollToTop = () => {
 
   return (
     <div
+      aria-label={ariaLabel}
       className={clsx("fluidus-scroll-to-top", { "is-active": isVisible })}
       onClick={handleScrollToTop}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          handleScrollToTop();
+        }
+      }}
+      role="button"
+      tabIndex={0}
     >
-      <ChevronUp size={48} />
+      <ChevronUp size={36} />
     </div>
   );
 };

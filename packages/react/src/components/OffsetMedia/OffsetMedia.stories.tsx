@@ -31,7 +31,7 @@ const AllSizesTemplate: Story = {
   render: ({ ...args }) => (
     <>
       <OffsetMedia
-        image={{ src: "https://picsum.photos/320/200" }}
+        image={{ src: "https://picsum.photos/id/82/320/240" }}
         media={{ size: "large" }}
       >
         <Paragraph>
@@ -55,7 +55,7 @@ const AllSizesTemplate: Story = {
           commodo ligula eget dolor.
         </Paragraph>
       </OffsetMedia>
-      <OffsetMedia image={{ src: "https://picsum.photos/320/200" }}>
+      <OffsetMedia image={{ src: "https://picsum.photos/id/82/320/240" }}>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor.
@@ -78,7 +78,7 @@ const AllSizesTemplate: Story = {
         </Paragraph>
       </OffsetMedia>
       <OffsetMedia
-        image={{ src: "https://picsum.photos/320/200" }}
+        image={{ src: "https://picsum.photos/id/82/320/240" }}
         media={{ size: "small" }}
       >
         <Paragraph>
@@ -103,7 +103,7 @@ const AllSizesTemplate: Story = {
         </Paragraph>
       </OffsetMedia>
       <OffsetMedia
-        image={{ src: "https://picsum.photos/320/200" }}
+        image={{ src: "https://picsum.photos/id/82/320/240" }}
         media={{ position: "right", size: "large" }}
       >
         <Paragraph>
@@ -128,7 +128,7 @@ const AllSizesTemplate: Story = {
         </Paragraph>
       </OffsetMedia>
       <OffsetMedia
-        image={{ src: "https://picsum.photos/320/200" }}
+        image={{ src: "https://picsum.photos/id/82/320/240" }}
         media={{ position: "right" }}
       >
         <Paragraph>
@@ -152,7 +152,7 @@ const AllSizesTemplate: Story = {
         </Paragraph>
       </OffsetMedia>
       <OffsetMedia
-        image={{ src: "https://picsum.photos/320/200" }}
+        image={{ src: "https://picsum.photos/id/82/320/240" }}
         media={{ position: "right", size: "small" }}
       >
         <Paragraph>
@@ -181,19 +181,19 @@ const AllSizesTemplate: Story = {
 };
 
 export const Default: Story = {
-  args: { image: { src: "https://picsum.photos/320/200" } },
+  args: { image: { src: "https://picsum.photos/id/82/320/240" } },
 };
 
 export const ImageRight: Story = {
   args: {
-    image: { src: "https://picsum.photos/320/200" },
+    image: { src: "https://picsum.photos/id/82/320/240" },
     media: { position: "right" },
   },
 };
 
 export const WithHalo: Story = {
   args: {
-    image: { src: "https://picsum.photos/320/200" },
+    image: { src: "https://picsum.photos/id/82/320/240" },
     media: { halo: true },
   },
 };

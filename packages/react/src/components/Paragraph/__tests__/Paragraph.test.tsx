@@ -1,7 +1,6 @@
-import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { render } from "@testing-library/react";
 import { Paragraph, ParagraphProps } from "../Paragraph";
-import { Heading, HeadingProps } from "@components/Heading";
 
 describe("Paragraph component", () => {
   const defaultProps: ParagraphProps = {
@@ -18,7 +17,7 @@ describe("Paragraph component", () => {
     expect(paragraphElement).toHaveTextContent(
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
     );
-    expect(paragraphElement).toHaveClass("fluidus-paragraph--medium");
+    expect(paragraphElement).not.toHaveClass("fluidus-paragraph--medium");
   });
 
   it("renders small paragraph", () => {

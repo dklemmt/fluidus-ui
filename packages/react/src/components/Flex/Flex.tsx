@@ -15,7 +15,7 @@ export interface FlexBaseProps extends PropsWithChildren {
     | "baseline";
 
   className?: string;
-  direction?: "horizontal" | "vertical";
+  orientation?: "horizontal" | "vertical";
   /** The gap between elements */
   gap?:
     | "xxxlarge"
@@ -51,6 +51,7 @@ interface FlexNoWrapProps extends FlexBaseProps {
 
 interface FlexWrapProps extends FlexBaseProps {
   alignContent?:
+    | "normal"
     | "start"
     | "end"
     | "flex-start"
@@ -70,9 +71,9 @@ export const Flex = ({
   alignItems = "stretch",
   children,
   className = "",
-  direction = "horizontal",
+  orientation = "horizontal",
   gap = "medium",
-  justifyContent = "normal",
+  justifyContent,
   wrap = "nowrap",
   ...rest
 }: FlexProps) => (
@@ -82,14 +83,15 @@ export const Flex = ({
       {
         [`fluidus-flex-align-${alignContent}`]: alignContent !== "normal",
         [`fluidus-flex-align-items-${alignItems}`]: alignItems !== "stretch",
-        [`fluidus-flex-direction-${direction}`]: direction !== "horizontal",
+        [`fluidus-flex-orientation-${orientation}`]:
+          orientation !== "horizontal",
         [`fluidus-flex-gap-${gap}`]: !!gap,
-        [`fluidus-flex-justify-content-${justifyContent}`]:
-          justifyContent !== "normal",
+        [`fluidus-flex-justify-content-${justifyContent}`]: !!justifyContent,
         [`fluidus-flex-wrap-${wrap}`]: wrap !== "nowrap",
       },
       className,
     )}
+    data-testid="flex"
     {...rest}
   >
     {children}

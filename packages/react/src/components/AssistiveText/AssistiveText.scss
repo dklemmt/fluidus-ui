@@ -1,7 +1,8 @@
-@use "@fluidus-ui/core/src/scss/fluidus";
+@use "@fluidus-ui/tokens/dist/fluidus/css/components/assisitive-text.css";
 
 .fluidus-assistive-text {
-  @include fluidus.typography(body-small);
+  color: var(--fluidus-color-assistive-text);
 
-  color: var(--fluidus-color-form-assistive-text);
+  // font-size: var(--fluidus-size-assistive-text-font-size);
+  // line-height: var(--fluidus-size-assistive-text-line-height);
 }

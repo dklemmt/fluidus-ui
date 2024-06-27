@@ -1,7 +1,8 @@
-@use "@fluidus-ui/core/src/scss/fluidus";
+@use "@fluidus-ui/tokens/dist/fluidus/css/components/error-text.css";
 
 .fluidus-error-text {
-  @include fluidus.typography(body-small);
+  color: var(--fluidus-color-error-text);
 
-  color: var(--fluidus-color-form-error-text);
+  // font-size: var(--fluidus-size-error-text-font-size);
+  // line-height: var(--fluidus-size-error-text-line-height);
 }

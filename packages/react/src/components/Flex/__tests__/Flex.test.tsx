@@ -1,58 +1,79 @@
-import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Flex } from "../Flex";
+import { render } from "@testing-library/react";
+import { Flex, FlexProps } from "../Flex";
 
 describe("Flex component", () => {
-  it("renders horizontal flex container without any props", () => {
-    const { container } = render(<Flex />);
-    const flexContainer = container.firstChild as HTMLDivElement;
+  const defaultProps: FlexProps = {
+    children: <div>Test Child</div>,
+  };
 
-    expect(flexContainer).toBeInTheDocument();
-    expect(flexContainer).toHaveClass("fluidus-flex");
-    expect(flexContainer).not.toHaveClass("fluidus-flex-align-normal");
-    expect(flexContainer).not.toHaveClass("fluidus-flex-direction-vertical");
+  it("renders Flex component with default props", () => {
+    const { getByTestId } = render(<Flex {...defaultProps} />);
+    const flexElement = getByTestId("flex");
+
+    expect(flexElement).toBeInTheDocument();
+    expect(flexElement).toHaveClass("fluidus-flex");
+    expect(flexElement).toHaveClass("fluidus-flex-gap-medium");
   });
 
-  it("applies custom className", () => {
-    const { container } = render(<Flex className="custom-class" />);
-    const flexContainer = container.firstChild as HTMLDivElement;
+  it("renders Flex component with custom className", () => {
+    const { getByTestId } = render(
+      <Flex {...defaultProps} className="custom-class" />,
+    );
+    const flexElement = getByTestId("flex");
 
-    expect(flexContainer).toHaveClass("fluidus-flex");
-    expect(flexContainer).toHaveClass("custom-class");
+    expect(flexElement).toBeInTheDocument();
+    expect(flexElement).toHaveClass("fluidus-flex");
+    expect(flexElement).toHaveClass("custom-class");
   });
 
-  it("renders flex container with vertical direction", () => {
-    const { container } = render(<Flex direction="vertical" />);
-    const flexContainer = container.firstChild as HTMLDivElement;
+  it("renders Flex component with different alignItems", () => {
+    const { getByTestId } = render(
+      <Flex {...defaultProps} alignItems="center" />,
+    );
+    const flexElement = getByTestId("flex");
 
-    expect(flexContainer).toHaveClass("fluidus-flex-direction-vertical");
+    expect(flexElement).toBeInTheDocument();
+    expect(flexElement).toHaveClass("fluidus-flex");
+    expect(flexElement).toHaveClass("fluidus-flex-align-items-center");
   });
 
-  it("renders flex container with specified gap", () => {
-    const { container } = render(<Flex gap="medium" />);
-    const flexContainer = container.firstChild as HTMLDivElement;
+  it("renders Flex component with different justifyContent", () => {
+    const { getByTestId } = render(
+      <Flex {...defaultProps} justifyContent="center" />,
+    );
+    const flexElement = getByTestId("flex");
 
-    expect(flexContainer).toHaveClass("fluidus-flex-gap-medium");
+    expect(flexElement).toBeInTheDocument();
+    expect(flexElement).toHaveClass("fluidus-flex");
+    expect(flexElement).toHaveClass("fluidus-flex-justify-content-center");
   });
 
-  it("renders flex container with specified justify content", () => {
-    const { container } = render(<Flex justifyContent="center" />);
-    const flexContainer = container.firstChild as HTMLDivElement;
+  it("renders Flex component with different wrap options", () => {
+    const { getByTestId } = render(<Flex {...defaultProps} wrap="wrap" />);
+    const flexElement = getByTestId("flex");
 
-    expect(flexContainer).toHaveClass("fluidus-flex-justify-content-center");
+    expect(flexElement).toBeInTheDocument();
+    expect(flexElement).toHaveClass("fluidus-flex");
+    expect(flexElement).toHaveClass("fluidus-flex-wrap-wrap");
   });
 
-  it("renders flex container with specified align items", () => {
-    const { container } = render(<Flex alignContent="center" />);
-    const flexContainer = container.firstChild as HTMLDivElement;
+  it("renders Flex component with different gaps", () => {
+    const { getByTestId } = render(<Flex {...defaultProps} gap="large" />);
+    const flexElement = getByTestId("flex");
 
-    expect(flexContainer).toHaveClass("fluidus-flex-align-content-center");
+    expect(flexElement).toBeInTheDocument();
+    expect(flexElement).toHaveClass("fluidus-flex");
+    expect(flexElement).toHaveClass("fluidus-flex-gap-large");
   });
 
-  it("renders flex container with wrap", () => {
-    const { container } = render(<Flex wrap="wrap" />);
-    const flexContainer = container.firstChild as HTMLDivElement;
+  it("renders Flex component with children", () => {
+    const { getByTestId } = render(<Flex {...defaultProps} />);
+    const flexElement = getByTestId("flex");
+    const childElement = flexElement.querySelector("div");
 
-    expect(flexContainer).toHaveClass("fluidus-flex-wrap-wrap");
+    expect(flexElement).toBeInTheDocument();
+    expect(childElement).toBeInTheDocument();
+    expect(childElement).toHaveTextContent("Test Child");
   });
 });

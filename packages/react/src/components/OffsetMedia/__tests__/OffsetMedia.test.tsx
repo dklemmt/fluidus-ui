@@ -1,6 +1,6 @@
+import "@testing-library/jest-dom";
 import React from "react";
 import { render } from "@testing-library/react";
-import "@testing-library/jest-dom";
 import type { ImageProps } from "@components/Image";
 import type { VideoProps } from "@components/Video";
 import { OffsetMedia, OffsetMediaProps } from "../OffsetMedia";

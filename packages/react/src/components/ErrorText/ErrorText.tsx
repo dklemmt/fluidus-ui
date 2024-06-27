@@ -9,7 +9,7 @@ export interface ErrorTextProps
 }
 
 export const ErrorText = ({ className, ...rest }: ErrorTextProps) => (
-  <div
+  <small
     aria-invalid="true"
     className={clsx("fluidus-error-text", className)}
     data-testid="error-text"

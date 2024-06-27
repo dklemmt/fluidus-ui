@@ -1,11 +1,26 @@
-import { Meta, Source } from '@storybook/addon-docs';
+import { Meta } from "@storybook/addon-docs";
 import { Flex } from "../components/Flex";
+import { Paragraph } from "../components/Paragraph";
+import { ContentSection } from "../components/ContentLayout/ContentSection";
 
 <Meta title="Introduction" />
 
-<Flex justify="center">
-  <svg viewbox="0 0 100 20"><defs><linearGradient id="gradient"><stop color="#2196f3"/></linearGradient><pattern id="wave" x="0" y="-.5" width="100%" height="100%" stroke="#2196f3" patternUnits="userSpaceOnUse"><path id="wavePath" d="M-40 9q10-2 20 0T0 9t20 0 20 0 20 0 20 0 20 0 20 0v11H-40z" mask="url(#mask)" fill="url(#gradient)"><animateTransform attributeName="transform" begin="0s" dur="3s" type="translate" from="0,0" to="40,0" repeatCount="indefinite"/></path></pattern></defs><text text-anchor="middle" x="45" y="15" font-size="20" fill="#2196f3" fill-opacity=".7">Fluidus UI</text><text text-anchor="middle" x="45" y="15" font-size="20" fill="url(#wave)" fill-opacity="1">Fluidus UI</text></svg>
-</Flex>
-
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://...)
-
+<ContentSection>
+  <Flex alignItems="center" justifyContent="center">
+    <svg viewBox="0 0 100 20" width="300" height="60"><defs><linearGradient id="gradient"><stop color="#2196f3"/></linearGradient><pattern id="wave" x="0" y="-.5" width="100%" height="100%" stroke="#2196f3" patternUnits="userSpaceOnUse"><path id="wavePath" d="M-40 9q10-2 20 0T0 9t20 0 20 0 20 0 20 0 20 0 20 0v11H-40z" mask="url(#mask)" fill="url(#gradient)"><animateTransform attributeName="transform" begin="0s" dur="3s" type="translate" from="0,0" to="40,0" repeatCount="indefinite"/></path></pattern></defs><text textAnchor="middle" x="45" y="15" fontSize="20" fill="#2196f3" fillOpacity=".7">Fluidus UI</text><text textAnchor="middle" x="45" y="15" fontSize="20" fill="url(#wave)" fillOpacity="1">Fluidus UI</text></svg>
+  </Flex>
+</ContentSection>
+<ContentSection>
+  <Flex gap="xxxsmall">
+    <a href="https://www.npmjs.com/package/@fluidus-ui/react"><img src="https://img.shields.io/npm/v/@fluidus-ui/react?style=flat-square" alt="version" /></a>
+    <a href="https://github.com/dklemmt/fluidus-ui/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@fluidus-ui/react.svg?style=flat-square" alt="MIT License" /></a>
+    <a href="http://www.npmtrends.com/@fluidus-ui/react"><img src="https://img.shields.io/npm/dm/@fluidus-ui/react.svg?style=flat-square" alt="npmtrends" /></a>
+    <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" /></a>
+    <a href="https://github.com/dklemmt/@fluidus-ui/blob/main/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square" alt="Code of Conduct" /></a>
+  </Flex>
+</ContentSection>
+<ContentSection>
+  <Paragraph>
+    Fluidus (lat. fluid) is an open-source UI library for modern React applications. It does not use typical breakpoints, but different sizes for typography and spacing, which vary depending on the window or screen size.
+  </Paragraph>
+</ContentSection>

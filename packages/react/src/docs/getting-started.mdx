@@ -33,3 +33,14 @@ To include the Sass files from *Fluidus Core* in your application, you should do
 `} dark />
 
 By including the Sass files from Fluidus Core at a central location and early in your application, you ensure that the core styles are applied consistently throughout your project. This helps maintain a cohesive design and ensures that the UI components from Fluidus React render correctly with the associated styles.
+
+Now you're ready to use *Fluidus React* components in your application like:
+
+<Source code={`import { ContentContainer, Heading } from '@fluidus-ui/react';
+
+export const TestPage = () => (
+  <ContentContainer>
+    <Heading>Lorem ipsum dolor sit amet.</Heading>
+  </ContentContainer>
+);
+`} dark />

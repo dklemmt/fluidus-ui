@@ -1,24 +1,31 @@
+@use "@fluidus-ui/core/src/scss/fluidus";
 @use "@fluidus-ui/tokens/dist/fluidus/css/components/scroll-to-top.css";
 
 .fluidus-scroll-to-top {
+  @include fluidus.focus;
+
+  display: flex;
   visibility: hidden;
   position: fixed;
   z-index: 10; // todo: replace with layers
-  right: 25px; // todo: replace with grid-padding
-  bottom: 25px; // todo: replace with grid-padding
-  width: 48px;
-  height: 48px;
+  right: var(--fluidus-size-space-medium);
+  bottom: var(--fluidus-size-space-medium);
+  align-items: center;
+  justify-content: center;
+  width: var(--fluidus-size-space-large);
+  height: var(--fluidus-size-space-large);
   transition: all 0.3s ease-in-out;
-  border-radius: 4px;
+  border: 2px solid var(--fluidus-color-scroll-to-top-icon-base);
+  border-radius: var(--fluidus-size-radius-small);
   opacity: 0;
   background-color: var(--fluidus-color-scroll-to-top-background-base);
   cursor: pointer;
 
   &.is-active {
     visibility: visible;
-    opacity: 0.7;
-    backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    opacity: 1;
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
   }
 
   svg {
@@ -26,7 +33,6 @@
   }
 
   &:hover {
-    transition: background-color 0.2s ease-in-out;
     background-color: var(--fluidus-color-scroll-to-top-background-hover);
 
     svg {

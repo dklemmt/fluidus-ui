@@ -85,8 +85,8 @@ const AllSizesWithPaddingTemplate: Story = {
   render: ({ ...args }) => (
     <div
       style={{
-        paddingTop: "var(--fluidus-size-space-small-large",
-        paddingBottom: "var(--fluidus-size-space-small-large",
+        paddingTop: "var(--fluidus-size-space-small-large)",
+        paddingBottom: "var(--fluidus-size-space-small-large)",
         backgroundColor: "var(--fluidus-color-orange-100)",
       }}
     >

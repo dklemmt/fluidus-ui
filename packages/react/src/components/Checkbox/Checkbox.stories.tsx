@@ -28,7 +28,9 @@ export const AssistiveText: Story = {
   args: { assistiveText: "Assistive text" },
 };
 
-export const Checked: Story = { args: { checked: true } };
+export const Checked: Story = {
+  args: { defaultChecked: true },
+};
 
 export const Disabled: Story = { args: { disabled: true } };
 

@@ -1,3 +1,7 @@
 .fluidus-content-section + * {
+  --fluidus-content-layout-spacing: var(
+    --fluidus-size-space-medium-large
+  ); // spacing between two following content containers
+
   margin-top: var(--fluidus-content-layout-spacing);
 }

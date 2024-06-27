@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { render } from "@testing-library/react";
 import { BlockQuote, BlockQuoteProps } from "../BlockQuote";
 
 describe("BlockQuote component", () => {

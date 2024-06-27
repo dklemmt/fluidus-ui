@@ -59,8 +59,10 @@ export const RadioGroup = ({
   }
 
   const childrenWithProps = Children.map(children, (child) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (isValidElement(child) && child.props.value !== undefined) {
       return cloneElement(child, {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         checked: child.props.value === selectedValue,
         disabled,
         error,

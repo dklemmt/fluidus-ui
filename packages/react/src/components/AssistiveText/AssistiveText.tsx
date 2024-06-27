@@ -9,7 +9,7 @@ export interface AssistiveTextProps
 }
 
 export const AssistiveText = ({ className, ...rest }: AssistiveTextProps) => (
-  <div
+  <small
     className={clsx("fluidus-assistive-text", className)}
     data-testid="assistive-text"
     {...rest}

@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
+export type { ScrollToTopProps } from "./ScrollToTop";
 export { ScrollToTop } from "./ScrollToTop";

@@ -43,6 +43,7 @@ export const Textarea = ({
         <label
           className={clsx("fluidus-textarea-label")}
           data-content={label}
+          data-testid="`textarea-label"
           htmlFor={textareaId}
         >
           <span className="hidden--visually">{label}</span>
@@ -54,6 +55,7 @@ export const Textarea = ({
           { "fluidus-textarea--error": error },
           className,
         )}
+        data-testid="textarea-textarea"
         disabled={disabled}
         id={textareaId}
         maxLength={maxLength}
@@ -61,9 +63,13 @@ export const Textarea = ({
         value={value}
         {...rest}
       />
-      {assistiveText && <AssistiveText>{assistiveText}</AssistiveText>}
+      {assistiveText && (
+        <AssistiveText data-testid="textarea-assistive-text">
+          {assistiveText}
+        </AssistiveText>
+      )}
       {error && errorText && errorText?.trim() !== "" && (
-        <ErrorText>{errorText}</ErrorText>
+        <ErrorText data-testid="textarea-error-text">{errorText}</ErrorText>
       )}
     </div>
   );

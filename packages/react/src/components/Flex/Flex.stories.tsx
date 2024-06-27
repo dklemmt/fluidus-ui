@@ -28,7 +28,7 @@ const meta = {
     alignItems: { control: "select" },
     children: { table: { disable: true } },
     className: { control: false },
-    direction: { control: "select" },
+    orientation: { control: "select" },
     gap: { control: "select" },
     justifyContent: { control: "select" },
     wrap: { control: "select" },

@@ -10,7 +10,7 @@ const meta = {
   },
   args: {
     // src: "https://placehold.co/320x240",
-    src: "https://picsum.photos/320/240",
+    src: "https://picsum.photos/id/82/320/240",
   },
 } satisfies Meta<typeof Image>;
 export default meta;

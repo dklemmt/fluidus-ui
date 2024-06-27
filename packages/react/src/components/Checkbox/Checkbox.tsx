@@ -50,6 +50,7 @@ export const Checkbox = forwardRef(
           { "fluidus-checkbox--error": error },
           className,
         )}
+        data-testid="checkbox-input"
         disabled={disabled}
         ref={ref}
         type="checkbox"
@@ -61,12 +62,21 @@ export const Checkbox = forwardRef(
       return (
         <div className="fluidus-checkbox-container">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-          <label className={clsx("fluidus-checkbox-label")}>
+          <label
+            className={clsx("fluidus-checkbox-label")}
+            data-testid="checkbox-label"
+          >
             {InputItem}
             {children}
-            {assistiveText && <AssistiveText>{assistiveText}</AssistiveText>}
+            {assistiveText && (
+              <AssistiveText data-testid="checkbox-assistive-text">
+                {assistiveText}
+              </AssistiveText>
+            )}
             {error && errorText && errorText?.trim() !== "" && (
-              <ErrorText>{errorText}</ErrorText>
+              <ErrorText data-testid="checkbox-error-text">
+                {errorText}
+              </ErrorText>
             )}
           </label>
         </div>

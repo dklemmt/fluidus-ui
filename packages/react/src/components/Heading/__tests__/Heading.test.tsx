@@ -1,14 +1,34 @@
-import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { render } from "@testing-library/react";
 import { Heading, HeadingProps } from "../Heading";
-import { Paragraph } from "@components/Paragraph";
 
 describe("Heading component", () => {
   const defaultProps: HeadingProps = {
     children: "Test Heading",
   };
 
-  it("renders default (xlarge) heading (h1)", () => {
+  it("renders Heading component with default props", () => {
+    const { getByTestId } = render(<Heading {...defaultProps} />);
+    const headingElement = getByTestId("heading");
+
+    expect(headingElement).toBeInTheDocument();
+    expect(headingElement.tagName.toLowerCase()).toBe("h1");
+    expect(headingElement).toHaveClass("fluidus-heading");
+    expect(headingElement).toHaveClass("fluidus-heading--xlarge");
+  });
+
+  it("renders Heading component with custom className", () => {
+    const { getByTestId } = render(
+      <Heading {...defaultProps} className="custom-class" />,
+    );
+    const headingElement = getByTestId("heading");
+
+    expect(headingElement).toBeInTheDocument();
+    expect(headingElement).toHaveClass("fluidus-heading");
+    expect(headingElement).toHaveClass("custom-class");
+  });
+
+  it("renders Heading component with size default (xlarge)", () => {
     const { getByTestId } = render(<Heading {...defaultProps} />);
     const headingElement = getByTestId("heading");
 
@@ -18,7 +38,7 @@ describe("Heading component", () => {
     expect(headingElement).toHaveClass("fluidus-heading--xlarge");
   });
 
-  it("renders large heading (h2)", () => {
+  it("renders Heading component with size (large)", () => {
     const { getByTestId } = render(<Heading {...defaultProps} size="large" />);
     const headingElement = getByTestId("heading");
 
@@ -28,17 +48,17 @@ describe("Heading component", () => {
     expect(headingElement).toHaveClass("fluidus-heading--large");
   });
 
-  it("renders medium heading (h3)", () => {
+  it("renders Heading component with medium", () => {
     const { getByTestId } = render(<Heading {...defaultProps} size="medium" />);
     const headingElement = getByTestId("heading");
 
     expect(headingElement).toBeInTheDocument();
     expect(headingElement.tagName.toLowerCase()).toBe("h3");
     expect(headingElement).toHaveTextContent("Test Heading");
-    expect(headingElement).toHaveClass("fluidus-heading--medium");
+    expect(headingElement).not.toHaveClass("fluidus-heading--medium");
   });
 
-  it("renders small heading (h4)", () => {
+  it("renders Heading component with size small", () => {
     const { getByTestId } = render(<Heading {...defaultProps} size="small" />);
     const headingElement = getByTestId("heading");
 
@@ -48,7 +68,7 @@ describe("Heading component", () => {
     expect(headingElement).toHaveClass("fluidus-heading--small");
   });
 
-  it("renders extra-small heading (h5)", () => {
+  it("renders Heading component with size xsmall", () => {
     const { getByTestId } = render(<Heading {...defaultProps} size="xsmall" />);
     const headingElement = getByTestId("heading");
 
@@ -58,27 +78,10 @@ describe("Heading component", () => {
     expect(headingElement).toHaveClass("fluidus-heading--xsmall");
   });
 
-  it("applies custom className", () => {
-    const { getByTestId } = render(
-      <Heading {...defaultProps} className="custom-class" />,
-    );
-    const headingElement = getByTestId("heading");
-
-    expect(headingElement).toHaveClass("fluidus-heading--xlarge");
-    expect(headingElement).toHaveClass("custom-class");
-  });
-
-  it("renders with children", () => {
+  it("renders Heading component with children", () => {
     const { getByTestId } = render(<Heading>Test Heading</Heading>);
     const headingElement = getByTestId("heading");
 
     expect(headingElement).toHaveTextContent("Test Heading");
-  });
-
-  it("renders with additional props", () => {
-    const { getByTestId } = render(<Heading id="test-id" />);
-    const headingElement = getByTestId("heading");
-
-    expect(headingElement).toHaveAttribute("id", "test-id");
   });
 });

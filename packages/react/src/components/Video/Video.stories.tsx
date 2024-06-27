@@ -24,5 +24,5 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = { args: {} };
 
 export const WithPoster: Story = {
-  args: { poster: "https://picsum.photos/640/480" },
+  args: { poster: "https://picsum.photos/id/82/640/480" },
 };

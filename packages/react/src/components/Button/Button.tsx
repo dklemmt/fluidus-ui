@@ -12,13 +12,11 @@ export interface ButtonPropsBase
     PropsWithChildren {
   className?: string;
   disabled?: boolean;
-  // href?: string;
-  // type: "button" | "submit" | "reset";
 }
 
 interface ButtonButtonProps extends ButtonPropsBase {
   href?: never;
-  type: "button" | "reset" | "submit";
+  type: "button" | "submit";
 }
 
 interface ButtonLinkProps extends ButtonPropsBase {
@@ -48,7 +46,7 @@ export const Button = ({
     <button
       className={clsx("fluidus-button", className)}
       disabled={disabled}
-      type={type}
+      type={type === "button" ? "button" : "submit"}
       {...rest}
     >
       {children}
