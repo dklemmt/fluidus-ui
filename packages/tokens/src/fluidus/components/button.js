@@ -1,7 +1,7 @@
 module.exports = {
   color: {
     button: {
-      background: { value: "{color.orange.100.value}" },
+      background: { value: "{color.orange.100}" },
     },
   },
   size: {

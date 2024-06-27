@@ -1,9 +1,9 @@
 module.exports = {
   color: {
     "block-quote": {
-      background: { value: "{color.orange.100.value}" },
-      quote: { value: "{color.orange.900.value}" },
-      source: { value: "{color.red.900.value}" },
+      background: { value: "{color.orange.100}" },
+      quote: { value: "{color.orange.900}" },
+      source: { value: "{color.red.900}" },
     },
   },
   font: {

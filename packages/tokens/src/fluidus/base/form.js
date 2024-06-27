@@ -8,10 +8,4 @@ module.exports = {
       errorText: { value: "{color.form.error}" },
     },
   },
-  // size: {
-  //   form: {
-  //     assistiveText: { value: "{size.font.body.small}" },
-  //     errorText: { value: "{color.form.error}" },
-  //   },
-  // },
 };

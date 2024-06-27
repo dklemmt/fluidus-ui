@@ -2,12 +2,12 @@ module.exports = {
   color: {
     "scroll-to-top": {
       background: {
-        base: { value: "{color.white.value}" },
-        hover: { value: "{color.orange.700.value}" },
+        base: { value: "hsl(0deg 0% 100% / 90%)" },
+        hover: { value: "{color.orange.500}" },
       },
       icon: {
-        base: { value: "{color.orange.400.value}" },
-        hover: { value: "{color.orange.400.value}" },
+        base: { value: "{color.orange.400}" },
+        hover: { value: "{color.orange.50}" },
       },
     },
   },

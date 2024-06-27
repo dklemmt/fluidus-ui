@@ -138,7 +138,11 @@ const getStyleDictionaryConfig = (brand, tokens) => {
         destination: `${brand}/css/components/${component}.css`,
         format: "css/variables",
         filter: (token) => token.filePath.includes(`/components/${component}`), // only use tokens in the components directory
-        options: { outputReferences: true, showFileHeader: false },
+        options: {
+          outputReferences: true,
+          selector: ":scope",
+          showFileHeader: false,
+        },
       });
     });
   }
