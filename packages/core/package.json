@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Fluidus UI core styles, typography and colours.",
   "scripts": {
-    "build": "rimraf dist && node scripts/build-css.js"
+    "build": "rimraf dist && tsc --build && node scripts/build-css.js"
   },
   "author": "Dirk Klemmt",
   "license": "ISC",

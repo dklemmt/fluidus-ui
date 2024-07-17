@@ -1,19 +1,22 @@
 $enable-hyphenation: true !default;
 
 @mixin typography-base {
-  :is(h1, h2, h3, h4, h5, h6, p) + * {
-    margin-top: 1.15em;
+  :is(h1, h2, h3, h4, h5, h6, p, small) + * {
+    // margin-top: 1.15em;
+    // margin-top: var(--fluidus-size-space-medium-large);
+    // margin-top: var(--fluidus-size-space-small);
+    margin-top: clamp(1rem, 0.9em, 2rem);
   }
 
   :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
-    margin-top: 0.9em;
+    margin-top: 0.5em;
   }
 
   // Typography styles
   body {
-    color: var(--fluidus-color-grey-900);
+    color: var(--fluidus-base-color);
     font-family: var(--fluidus-base-font-family-regular);
-    line-height: 1.5;
+    line-height: var(--fluidus-base-line-height);
   }
 
   // Paragraphs
@@ -38,14 +41,10 @@ $enable-hyphenation: true !default;
   // Small text
   small {
     @include typography(body-small);
-
-    //font-size: var(--fluidus-size-font-body-small-font-size);
-    //line-height: inherit;
   }
 
   @if $enable-hyphenation == "true" {
     body {
-      -webkit-hyphens: auto;
       hyphens: auto;
     }
   }
@@ -53,5 +52,6 @@ $enable-hyphenation: true !default;
 
 @mixin typography($name) {
   font-size: var(--fluidus-size-font-#{$name}-font-size);
+  letter-spacing: var(--fluidus-size-font-#{$name}-letter-spacing);
   line-height: var(--fluidus-size-font-#{$name}-line-height);
 }
