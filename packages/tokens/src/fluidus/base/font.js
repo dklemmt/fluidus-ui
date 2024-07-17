@@ -13,5 +13,7 @@ module.exports = {
         base: { value: "{base.font.family.regular.value}" },
       },
     },
+    lineHeight: { value: "1.5" },
+    color: { value: "{color.grey.900}" },
   },
 };

@@ -77,7 +77,7 @@ const getStyleDictionaryConfig = (brand, tokens) => {
           //   },
           // },
           {
-            destination: `${brand}/css/${brand}.css`,
+            destination: `${brand}/css/fluidus.css`,
             format: "css/variables",
             filter: (token) => {
               // return (
@@ -101,7 +101,7 @@ const getStyleDictionaryConfig = (brand, tokens) => {
         files: [
           {
             // Sass Variables and Map
-            destination: `${brand}/scss/_${brand}.scss`,
+            destination: `${brand}/scss/_fluidus.scss`,
             format: "scss/map-deep",
             options: {
               showFileHeader: false,
@@ -116,7 +116,7 @@ const getStyleDictionaryConfig = (brand, tokens) => {
         files: [
           {
             // JS Variables
-            destination: `${brand}/js/${brand}.js`,
+            destination: `${brand}/js/fluidus.js`,
             format: "javascript/module",
             options: {
               showFileHeader: false,
