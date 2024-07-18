@@ -1,0 +1,37 @@
+.nav-link {
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+  outline: none;
+  color: var(--fluidus-color-link);
+  font-size: var(--fluidus-size-font-body-medium-font-size);
+  text-decoration: none;
+  text-decoration-color: currentcolor;
+  text-underline-offset: 0.25em;
+  cursor: pointer;
+
+  &.active {
+    cursor: initial;
+  }
+
+  //a {
+  //  display: inline-block;
+  //}
+
+  &:hover {
+    color: var(--fluidus-color-link-hover);
+  }
+
+  &.active,
+  &:active,
+  &:focus {
+    color: var(--fluidus-color-link-active);
+    text-decoration: underline;
+  }
+
+  &--disabled,
+  &--disabled:hover {
+    color: var(--fluidus-color-link-disabled);
+    cursor: not-allowed;
+  }
+}

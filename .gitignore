@@ -8,3 +8,5 @@ storybook-static
 .vscode
 
 *.log
+
+*storybook.log

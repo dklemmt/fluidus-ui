@@ -1,4 +1,5 @@
 module.exports = {
+  root: true, // don't use monorepos configuration
   env: {
     browser: true,
     es2021: true, // includes setting of 'parserOptions.ecmaVersion' to 12
@@ -46,11 +47,7 @@ module.exports = {
       parser: "@typescript-eslint/parser",
       parserOptions: {
         // project: true,
-        project: [
-          "./tsconfig.eslint.json",
-          "./packages/*/tsconfig.json",
-          "./apps/*/tsconfig.json",
-        ],
+        project: ["./tsconfig.eslint.json", "./tsconfig.json"],
         ecmaFeatures: {
           jsx: true,
         },

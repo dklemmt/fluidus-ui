@@ -1,0 +1,13 @@
+.footer {
+  //min-height: 60px;
+  min-height: 30px;
+
+  &-container {
+    display: grid;
+    grid-column: narrow-padding;
+    grid-template-columns: inherit;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: hsl(0deg 0% 100% / 90%);
+  }
+}
