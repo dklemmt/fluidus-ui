@@ -83,4 +83,6 @@ export const Video = ({
   </video>
 );
 
+export default Video;
+
 Video.displayName = "Video";

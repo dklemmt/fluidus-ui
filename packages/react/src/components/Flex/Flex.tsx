@@ -98,4 +98,6 @@ export const Flex = ({
   </div>
 );
 
+export default Flex;
+
 Flex.displayName = "Flex";

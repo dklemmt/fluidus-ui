@@ -17,4 +17,6 @@ export const ErrorText = ({ className, ...rest }: ErrorTextProps) => (
   />
 );
 
+export default ErrorText;
+
 ErrorText.displayName = "ErrorText";

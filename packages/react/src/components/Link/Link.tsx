@@ -13,4 +13,6 @@ export const Link = ({ children, className, href, ...rest }: LinkProps) => (
   </a>
 );
 
+export default Link;
+
 Link.displayName = "Link";

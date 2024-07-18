@@ -1,4 +1,3 @@
-// unused
 {
   "extends": ["../../tsconfig.json", "./tsconfig.json"],
   "compilerOptions": {

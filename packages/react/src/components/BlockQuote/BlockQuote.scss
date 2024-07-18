@@ -1,8 +1,10 @@
+@use "@fluidus-ui/core/src/scss/fluidus";
 @use "@fluidus-ui/tokens/dist/fluidus/css/components/block-quote.css";
 
 .fluidus-block-quote {
   max-width: var(--fluidus-size-block-quote-width);
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   padding: var(--fluidus-size-block-quote-padding);
   border-radius: var(--fluidus-size-block-quote-radius);
   background-color: var(--fluidus-color-block-quote-background);
@@ -18,5 +20,9 @@
     margin-top: 8px;
     color: var(--fluidus-color-block-quote-source);
     font-family: var(--fluidus-font-block-quote-family-source);
+  }
+
+  & + * {
+    margin-top: var(--fluidus-base-layout-spacing);
   }
 }

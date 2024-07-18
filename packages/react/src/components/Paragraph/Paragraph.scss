@@ -1,15 +1,17 @@
+@use "@fluidus-ui/core/src/scss/fluidus";
+
 .fluidus-paragraph {
-  font-size: var(--fluidus-size-font-body-medium-font-size);
+  @include fluidus.typography(body-medium);
 
   &--large {
-    font-size: var(--fluidus-size-font-body-large-font-size);
+    @include fluidus.typography(body-large);
   }
 
   &--small {
-    font-size: var(--fluidus-size-font-body-small-font-size);
+    @include fluidus.typography(body-small);
   }
 
   &--xsmall {
-    font-size: var(--fluidus-size-font-body-xsmall-font-size);
+    @include fluidus.typography(body-xsmall);
   }
 }

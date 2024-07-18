@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 // import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { fluidusUiTheme } from "./fluidusUiTheme";
-import { withColorScheme } from "./utils";
+// import { withColorScheme } from "./utils";
 
 import "!style-loader!css-loader!sass-loader!./index.scss";
 
@@ -15,27 +15,27 @@ import "!style-loader!css-loader!sass-loader!./index.scss";
 //   },
 // };
 
-export const globalTypes = {
-  scheme: {
-    name: "scheme",
-    description: "Select light or dark theme",
-    defaultValue: "off",
-    toolbar: {
-      icon: "circlehollow",
-      items: [
-        { value: "off", icon: "", title: "Select theme" },
-        { value: "light", icon: "sun", title: "Light (Default)" },
-        { value: "dark", icon: "moon", title: "Dark" },
-        // { value: 'side-by-side', icon: 'stacked', title: 'Side by side' },
-        { value: "stacked", icon: "stacked", title: "Stacked" },
-      ],
-      dynamicTitle: true,
-    },
-  },
-};
+// export const globalTypes = {
+//   scheme: {
+//     name: "scheme",
+//     description: "Select light or dark theme",
+//     defaultValue: "off",
+//     toolbar: {
+//       icon: "circlehollow",
+//       items: [
+//         { value: "off", icon: "", title: "Select theme" },
+//         { value: "light", icon: "sun", title: "Light (Default)" },
+//         { value: "dark", icon: "moon", title: "Dark" },
+//         // { value: 'side-by-side', icon: 'stacked', title: 'Side by side' },
+//         { value: "stacked", icon: "stacked", title: "Stacked" },
+//       ],
+//       dynamicTitle: true,
+//     },
+//   },
+// };
 
 const preview: Preview = {
-  decorators: [(Story, context) => withColorScheme(Story, context)],
+  // decorators: [(Story, context) => withColorScheme(Story, context)],
   argTypes: {
     // className: { description: "test" },
   },
@@ -48,7 +48,7 @@ const preview: Preview = {
       },
       sort: "requiredFirst",
     },
-    docs: { theme: fluidusUiTheme, toc: true },
+    docs: { /* theme: fluidusUiTheme, */ toc: true },
     options: {
       storySort: {
         method: "alphabetical",

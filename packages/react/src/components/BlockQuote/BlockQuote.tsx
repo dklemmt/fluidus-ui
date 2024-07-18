@@ -34,4 +34,6 @@ export const BlockQuote = ({
   </blockquote>
 );
 
+export default BlockQuote;
+
 BlockQuote.displayName = "BlockQuote";

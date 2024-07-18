@@ -2,8 +2,6 @@
 @use "@fluidus-ui/tokens/dist/fluidus/css/components/scroll-to-top.css";
 
 .fluidus-scroll-to-top {
-  @include fluidus.focus;
-
   display: flex;
   visibility: hidden;
   position: fixed;
@@ -20,6 +18,8 @@
   opacity: 0;
   background-color: var(--fluidus-color-scroll-to-top-background-base);
   cursor: pointer;
+
+  @include fluidus.focus;
 
   &.is-active {
     visibility: visible;

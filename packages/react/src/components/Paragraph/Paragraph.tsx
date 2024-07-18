@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
 import { ComponentProps, PropsWithChildren } from "react";
 import "./Paragraph.scss";
+import ContentSection from "@components/ContentLayout/ContentSection";
 
 export interface ParagraphProps extends ComponentProps<"p">, PropsWithChildren {
   className?: string;
@@ -22,5 +23,7 @@ export const Paragraph = ({
     {...rest}
   />
 );
+
+export default Paragraph;
 
 Paragraph.displayName = "Paragraph";

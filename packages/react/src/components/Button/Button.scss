@@ -28,4 +28,8 @@
     color: var(--fluidus-color-grey-400);
     cursor: not-allowed;
   }
+
+  & + * {
+    margin-top: var(--fluidus-base-layout-spacing);
+  }
 }

@@ -51,6 +51,7 @@ export const Radio = ({
         { "fluidus-radio--error": error },
         className,
       )}
+      data-testid="radio-input"
       disabled={disabled}
       name={name}
       onChange={(event) => onChange(event.target.value)}
@@ -78,5 +79,7 @@ export const Radio = ({
 
   return InputItem;
 };
+
+export default Radio;
 
 Radio.displayName = "Radio";

@@ -1,8 +1,10 @@
+@use "@fluidus-ui/core/src/scss/fluidus";
 @use "@fluidus-ui/tokens/dist/fluidus/css/components/divider.css";
 
 .fluidus-divider {
   display: flex;
   justify-content: center;
+  width: 100%;
   color: var(--fluidus-color-divider-text-color);
 
   &-container {
@@ -36,5 +38,9 @@
   &--content {
     display: flex;
     min-width: fit-content;
+  }
+
+  & + * {
+    margin-top: var(--fluidus-base-layout-spacing);
   }
 }

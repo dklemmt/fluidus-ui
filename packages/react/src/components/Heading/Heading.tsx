@@ -57,4 +57,6 @@ export const Heading = ({
   );
 };
 
+export default Heading;
+
 Heading.displayName = "Heading";

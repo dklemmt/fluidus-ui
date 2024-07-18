@@ -1,8 +1,10 @@
 import { clsx } from "clsx";
-import { ComponentProps, PropsWithChildren } from "react";
-import { Image } from "@components/Image";
-import { Video } from "@components/Video";
+import { ComponentProps, PropsWithChildren, Suspense, lazy } from "react";
+import { Spinner } from "@components/Spinner";
 import "./OffsetMedia.scss";
+
+const Image = lazy(() => import("@components/Image") as never);
+const Video = lazy(() => import("@components/Video") as never);
 
 interface OffsetMediaBaseProps
   extends ComponentProps<"div">,
@@ -57,26 +59,28 @@ export const OffsetMedia = ({
       {...rest}
     >
       {image && (
-        <Image
-          alt={image.alt}
-          className={clsx("fluidus-offset-media--image", classNameMedia)}
-          objectFit="cover"
-          src={image.src}
-          data-testid="offset-media-image"
-          // style={{ "--image-size": `var(--image-size-${size})` } as MyCustomCSS}
-        />
+        <Suspense fallback={<Spinner />}>
+          <Image
+            alt={image.alt}
+            className={clsx("fluidus-offset-media--image", classNameMedia)}
+            src={image.src}
+            data-testid="offset-media-image"
+            // style={{ "--image-size": `var(--image-size-${size})` } as MyCustomCSS}
+          />
+        </Suspense>
       )}
       {video && (
-        <Video
-          autoPlay
-          className={clsx("fluidus-offset-media--video", classNameMedia)}
-          controls={false}
-          loop
-          muted
-          objectFit="cover"
-          source={video.source}
-          data-testid="offset-media-video"
-        />
+        <Suspense fallback={<Spinner />}>
+          <Video
+            autoPlay
+            className={clsx("fluidus-offset-media--video", classNameMedia)}
+            controls={false}
+            loop
+            muted
+            source={video.source}
+            data-testid="offset-media-video"
+          />{" "}
+        </Suspense>
       )}
       <div
         className="fluidus-offset-media--content"
@@ -87,5 +91,7 @@ export const OffsetMedia = ({
     </div>
   );
 };
+
+export default OffsetMedia;
 
 OffsetMedia.displayName = "OffsetMedia";

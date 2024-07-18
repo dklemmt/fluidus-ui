@@ -50,4 +50,6 @@ export const ScrollToTop = ({
   );
 };
 
+export default ScrollToTop;
+
 ScrollToTop.displayName = "ScrollToTop";

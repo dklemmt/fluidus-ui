@@ -28,4 +28,6 @@ export const Divider = ({ children, className }: DividerProps) => {
   );
 };
 
+export default Divider;
+
 Divider.displayName = "Divider";

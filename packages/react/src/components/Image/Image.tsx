@@ -115,4 +115,6 @@ export const Image = ({
   );
 };
 
+export default Image;
+
 Image.displayName = "Image";

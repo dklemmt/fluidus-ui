@@ -20,7 +20,7 @@ interface ButtonButtonProps extends ButtonPropsBase {
 }
 
 interface ButtonLinkProps extends ButtonPropsBase {
-  href: string;
+  href?: string;
   type?: never;
 }
 
@@ -53,5 +53,7 @@ export const Button = ({
     </button>
   );
 };
+
+export default Button;
 
 Button.displayName = "Button";

@@ -1,23 +1,26 @@
+@use "@fluidus-ui/core/src/scss/fluidus";
+
 .fluidus-heading {
+  @include fluidus.typography(heading-medium);
+
   color: inherit;
   font-family: var(--fluidus-base-font-family-heading);
-  font-size: var(--fluidus-size-font-heading-medium-font-size);
   font-style: normal;
   font-weight: normal;
 
   &--xlarge {
-    font-size: var(--fluidus-size-font-heading-xlarge-font-size);
+    @include fluidus.typography(heading-xlarge);
   }
 
   &--large {
-    font-size: var(--fluidus-size-font-heading-large-font-size);
+    @include fluidus.typography(heading-large);
   }
 
   &--small {
-    font-size: var(--fluidus-size-font-heading-small-font-size);
+    @include fluidus.typography(heading-small);
   }
 
   &--xsmall {
-    font-size: var(--fluidus-size-font-heading-xsmall-font-size);
+    @include fluidus.typography(heading-xsmall);
   }
 }

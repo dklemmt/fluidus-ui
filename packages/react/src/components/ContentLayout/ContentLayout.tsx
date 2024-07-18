@@ -31,18 +31,18 @@ export const ContentLayout = ({
         )}
         {...rest}
       >
-        <div
+        <article
           className={clsx("fluidus-content-layout--padding", className)}
           style={style}
         >
           {children}
-        </div>
+        </article>
       </div>
     );
   }
 
   return (
-    <div
+    <article
       className={clsx(
         "fluidus-content-layout",
         { [`fluidus-content-layout--${size}`]: size !== "content" },
@@ -51,8 +51,10 @@ export const ContentLayout = ({
       {...rest}
     >
       {children}
-    </div>
+    </article>
   );
 };
+
+export default ContentLayout;
 
 ContentLayout.displayName = "ContentLayout";

@@ -84,6 +84,7 @@ export const RadioGroup = ({
           },
           className,
         )}
+        data-testid="radio-group"
         {...rest}
       >
         {childrenWithProps}
@@ -95,5 +96,7 @@ export const RadioGroup = ({
     </div>
   );
 };
+
+export default RadioGroup;
 
 RadioGroup.displayName = "RadioGroup";

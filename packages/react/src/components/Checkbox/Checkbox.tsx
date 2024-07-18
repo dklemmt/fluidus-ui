@@ -87,4 +87,6 @@ export const Checkbox = forwardRef(
   },
 );
 
+export default Checkbox;
+
 Checkbox.displayName = "Checkbox";

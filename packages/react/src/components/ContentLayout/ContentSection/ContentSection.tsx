@@ -24,4 +24,6 @@ export const ContentSection = ({
   />
 );
 
+export default ContentSection;
+
 ContentSection.displayName = "ContentSection";

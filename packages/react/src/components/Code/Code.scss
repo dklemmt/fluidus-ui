@@ -1,0 +1,10 @@
+@use "@fluidus-ui/core/src/scss/fluidus";
+// @use "@fluidus-ui/tokens/dist/fluidus/css/components/assisitive-text.css";
+
+.fluidus-code {
+  // color: var(--fluidus-color-assistive-text);
+
+  padding: var(--fluidus-size-space-xxxsmall) var(--fluidus-size-space-xxsmall);
+  border-radius: var(--fluidus-size-radius-small);
+  background-color: var(--fluidus-color-grey-200);
+}

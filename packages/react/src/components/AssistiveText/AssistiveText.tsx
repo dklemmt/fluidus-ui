@@ -16,4 +16,6 @@ export const AssistiveText = ({ className, ...rest }: AssistiveTextProps) => (
   />
 );
 
+export default AssistiveText;
+
 AssistiveText.displayName = "AssistiveText";

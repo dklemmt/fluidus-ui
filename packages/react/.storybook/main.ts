@@ -1,26 +1,35 @@
-import path, { dirname, join } from "path";
-import { StorybookConfig } from "@storybook/react-webpack5";
+import type { StorybookConfig } from "@storybook/react-webpack5";
 import type { Options } from "@swc/core";
+
+import path, { join, dirname } from "path";
 import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 
 const nodeModulesPath = path.resolve(__dirname, "../../../node_modules");
 
+/**
+ * This function is used to resolve the absolute path of a package.
+ * It is needed in projects that use Yarn PnP or are set up within a monorepo.
+ */
 const getAbsolutePath = (value: string): any =>
   dirname(require.resolve(join(value, "package.json")));
 
 const config: StorybookConfig = {
   core: { disableTelemetry: true },
-  framework: getAbsolutePath("@storybook/react-webpack5"),
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
-    getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-a11y"),
-    getAbsolutePath("@storybook/addon-interactions"),
-    // getAbsolutePath("@storybook/addon-designs"),
-    getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-webpack5-compiler-swc"),
-    "@chromatic-com/storybook",
+    getAbsolutePath("@storybook/addon-onboarding"),
+    getAbsolutePath("@storybook/addon-links"),
+    getAbsolutePath("@storybook/addon-essentials"),
+    getAbsolutePath("@chromatic-com/storybook"),
+    getAbsolutePath("@storybook/addon-interactions"),
+    getAbsolutePath("@storybook/addon-a11y"),
+    // getAbsolutePath("@storybook/addon-designs"),
   ],
+  framework: {
+    name: getAbsolutePath("@storybook/react-webpack5"),
+    options: {},
+  },
   staticDirs: ["./assets"],
   typescript: {
     reactDocgen: "react-docgen-typescript",

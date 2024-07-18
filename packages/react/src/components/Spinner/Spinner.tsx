@@ -52,4 +52,6 @@ export const Spinner = ({
   return SpinnerItem;
 };
 
+export default Spinner;
+
 Spinner.displayName = "Spinner";

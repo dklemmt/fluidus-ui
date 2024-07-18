@@ -50,6 +50,7 @@ export const Input = forwardRef(
             { "fluidus-input--error": error },
             className,
           )}
+          data-testid="input-input"
           disabled={disabled}
           id={inputId}
           placeholder={label}
@@ -75,5 +76,7 @@ export const Input = forwardRef(
     );
   },
 );
+
+export default Input;
 
 Input.displayName = "Input";
