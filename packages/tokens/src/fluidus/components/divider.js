@@ -4,15 +4,15 @@ module.exports = {
       "text-color": { value: "{color.orange.600}" },
       line: {
         value:
-          "linear-gradient(90deg, {color.orange.100} 0%, {color.orange.600} 50%, {color.orange.100} 100%)",
+          "linear-gradient(90deg, {color.orange.100} 0%, {color.orange.200} 50%, {color.orange.100} 100%)",
       },
       "line-left": {
         value:
-          "linear-gradient(to right, {color.orange.100}, {color.orange.600})",
+          "linear-gradient(to right, {color.orange.100}, {color.orange.200})",
       },
       "line-right": {
         value:
-          "linear-gradient(to left, {color.orange.100}, {color.orange.600})",
+          "linear-gradient(to left, {color.orange.100}, {color.orange.200})",
       },
     },
   },
