@@ -30,7 +30,7 @@ const config: StorybookConfig = {
     name: getAbsolutePath("@storybook/react-webpack5"),
     options: {},
   },
-  staticDirs: ["./assets"],
+  // staticDirs: ["./assets"],
   typescript: {
     reactDocgen: "react-docgen-typescript",
   },
