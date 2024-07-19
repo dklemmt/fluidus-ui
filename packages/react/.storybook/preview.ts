@@ -48,7 +48,7 @@ const preview: Preview = {
       },
       sort: "requiredFirst",
     },
-    docs: { /* theme: fluidusUiTheme, */ toc: true },
+    docs: { theme: fluidusUiTheme, toc: true },
     options: {
       storySort: {
         method: "alphabetical",
