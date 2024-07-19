@@ -18,7 +18,7 @@
     "lint": "npm run lint:core && npm run lint:react",
     "lint:core": "npm run lint --workspace=packages/core",
     "lint:react": "npm run lint --workspace=packages/react",
-    "start": "npm run build && npm run storybook --workspace=packages/react",
+    "start": "npm run build:tokens && npm run build:core && npm run storybook --workspace=packages/react",
     "start:boilerplate": "npm run build && npm start --workspace=apps/boilerplate",
     "test": "npm run test --workspace=packages/react",
     "prepare": "husky"
