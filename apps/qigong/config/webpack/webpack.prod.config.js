@@ -1,7 +1,10 @@
 const { merge } = require("webpack-merge");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 const commonConfig = require("./webpack.common.config");
+
+const nodeModulesPath = path.resolve(__dirname, "../../../../node_modules");
 
 const prodConfig = {
   mode: "production",
@@ -10,7 +13,18 @@ const prodConfig = {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                loadPaths: [nodeModulesPath],
+              },
+            },
+          },
+        ],
       },
     ],
   },

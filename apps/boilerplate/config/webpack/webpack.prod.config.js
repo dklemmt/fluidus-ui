@@ -22,7 +22,7 @@ const prodConfig = {
             loader: "sass-loader",
             options: {
               sassOptions: {
-                includePaths: [nodeModulesPath],
+                loadPaths: [nodeModulesPath],
               },
             },
           },

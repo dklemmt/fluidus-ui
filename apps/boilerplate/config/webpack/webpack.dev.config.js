@@ -46,7 +46,7 @@ const devConfig = {
             loader: "sass-loader",
             options: {
               sassOptions: {
-                includePaths: [nodeModulesPath],
+                loadPaths: [nodeModulesPath],
               },
             },
           },

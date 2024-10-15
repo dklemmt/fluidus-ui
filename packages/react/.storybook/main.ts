@@ -67,7 +67,7 @@ const config: StorybookConfig = {
           "css-loader",
           {
             loader: "sass-loader",
-            options: { sassOptions: { includePaths: [nodeModulesPath] } },
+            options: { sassOptions: { loadPaths: [nodeModulesPath] } },
           },
         ],
         include: path.resolve(__dirname, "../"),

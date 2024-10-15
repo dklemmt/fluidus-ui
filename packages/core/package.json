@@ -20,11 +20,11 @@
     "@fluidus-ui/tokens": "0.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "cssnano": "^7.0.2",
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
     "fs-extra": "11.2.0",
-    "postcss": "^8.4.35",
-    "sass": "^1.77.5"
+    "postcss": "^8.4.47",
+    "sass": "^1.79.5"
   },
   "engines": {
     "node": ">=18.18.0"
