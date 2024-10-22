@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { Paragraph, ParagraphProps } from "../Paragraph";
+import { Paragraph, ParagraphProps } from "./Paragraph";
 
 describe("Paragraph component", () => {
   const defaultProps: ParagraphProps = {

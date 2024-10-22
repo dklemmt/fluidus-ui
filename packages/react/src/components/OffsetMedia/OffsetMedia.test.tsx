@@ -1,12 +1,11 @@
+import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
 import type { ImageProps } from "@components/Image";
 import type { VideoProps } from "@components/Video";
-import "@testing-library/jest-dom";
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import { OffsetMedia, OffsetMediaProps } from "../OffsetMedia";
+import { OffsetMedia, OffsetMediaProps } from "./OffsetMedia";
 
 jest.mock("@components/Image", () => (props: ImageProps) => (
-  <img data-testid="offset-media-image" {...props} />
+  <img alt="" data-testid="offset-media-image" {...props} />
 ));
 jest.mock("@components/Video", () => (props: VideoProps) => (
   <video data-testid="offset-media-video" {...props} />

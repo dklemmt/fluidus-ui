@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { Flex, FlexProps } from "../Flex";
+import { Flex, FlexProps } from "./Flex";
 
 describe("Flex component", () => {
   const defaultProps: FlexProps = {

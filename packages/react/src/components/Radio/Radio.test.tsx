@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { Radio, RadioProps } from "../Radio";
+import { Radio, RadioProps } from "./Radio";
 
 describe("Radio component", () => {
   const defaultProps: RadioProps = {

@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { AssistiveText, AssistiveTextProps } from "../AssistiveText";
+import { AssistiveText, AssistiveTextProps } from "./AssistiveText";
 
 describe("AssistiveText component", () => {
   const defaultProps: AssistiveTextProps = {

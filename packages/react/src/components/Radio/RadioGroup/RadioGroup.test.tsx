@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { RadioGroup, RadioGroupProps } from "../RadioGroup";
+import { RadioGroup, RadioGroupProps } from "./RadioGroup";
 
 describe("RadioGroup component", () => {
   const defaultProps: RadioGroupProps = {

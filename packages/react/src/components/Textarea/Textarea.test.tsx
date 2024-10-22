@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render } from "@testing-library/react";
-import { Textarea, TextareaProps } from "../Textarea";
+import { Textarea, TextareaProps } from "./Textarea";
 
 describe("Textarea component", () => {
   const defaultProps: TextareaProps = {

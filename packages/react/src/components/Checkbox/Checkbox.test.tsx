@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { Checkbox, CheckboxProps } from "../Checkbox";
+import { Checkbox, CheckboxProps } from "./Checkbox";
 
 describe("Checkbox component", () => {
   const defaultProps: CheckboxProps = {

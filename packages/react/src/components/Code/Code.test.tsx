@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { Code, CodeProps } from "../Code";
+import { Code, CodeProps } from "./Code";
 
 describe("Code component", () => {
   const defaultProps: CodeProps = {

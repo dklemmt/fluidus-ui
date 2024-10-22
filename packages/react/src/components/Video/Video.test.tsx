@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { Video, VideoProps } from "../Video";
+import { Video, VideoProps } from "./Video";
 
 describe("Video component", () => {
   const defaultProps: VideoProps = {

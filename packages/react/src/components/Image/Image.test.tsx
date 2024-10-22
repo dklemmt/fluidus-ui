@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render, waitFor } from "@testing-library/react";
-import { Image, ImageProps } from "../Image";
+import { Image, ImageProps } from "./Image";
 
 describe("Image component", () => {
   const defaultProps: ImageProps = {

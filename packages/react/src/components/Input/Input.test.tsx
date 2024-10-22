@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Input, InputProps } from "../Input";
+import { Input, InputProps } from "./Input";
 
 describe("Input component", () => {
   const defaultProps: InputProps = {

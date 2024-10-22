@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { Spinner, SpinnerProps } from "../Spinner";
+import { Spinner, SpinnerProps } from "./Spinner";
 
 describe("Spinner component", () => {
   const defaultProps: SpinnerProps = {};

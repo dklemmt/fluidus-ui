@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { Heading, HeadingProps } from "../Heading";
+import { Heading, HeadingProps } from "./Heading";
 
 describe("Heading component", () => {
   const defaultProps: HeadingProps = {
